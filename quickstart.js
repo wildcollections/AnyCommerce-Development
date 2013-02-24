@@ -513,15 +513,17 @@ else	{
 					}
 				}
 			}, //showList
-		authenticateZoovyUser : {
+
+		authenticateBuyer : {
 			onSuccess : function(tagObj)	{
 				app.vars.cid = app.data[tagObj.datapointer].cid; //save to a quickly referencable location.
 				$('#loginSuccessContainer').show(); //contains 'continue' button.
 				$('#loginMessaging').empty().show().append("Thank you, you are now logged in."); //used for success and fail messaging.
 				$('#loginFormContainer').hide(); //contains actual form.
 				$('#recoverPasswordContainer').hide(); //contains password recovery form.
+				app.ext.myRIA.u.handleLoginActions();
 				}
-			} //authenticateZoovyUser
+			} //authenticateBuyer
 
 		}, //callbacks
 
@@ -535,7 +537,9 @@ need to be customized on a per-ria basis.
 */
 		wiki : {
 			":search" : function(suffix,phrase){
-				return "<a href='#' onClick=\"return showContent('search',{'KEYWORDS':'"+suffix.encodeURI()+"'}); \">"+phrase+"<\/a>"
+//				app.u.dump(" -> suffix: "+suffix+" and phrase: "+phrase);
+				suffix = suffix || phrase; //in a search, suffix 'may' not be set, in which case phrase is both displayed and searched for.
+				return "<a href='#' onClick=\"return showContent('search',{'KEYWORDS':'"+encodeURI(suffix)+"'}); \">"+phrase+"<\/a>"
 				},
 			":category" : function(suffix,phrase){
 				return "<a href='#category?navcat="+suffix+"' onClick='return showContent(\"category\",{\"navcat\":\""+suffix+"\"});'>"+phrase+"<\/a>"
@@ -1456,12 +1460,29 @@ if(ps.indexOf('?') >= 1)	{
 				if(infoObj.uriParams.meta_src)	{
 					app.calls.cartSet.init({'cart/refer_src':infoObj.uriParams.meta_src},{},'passive');
 					}
-
+				if(app.u.determineAuthentication() != 'none')	{
+					app.ext.myRIA.u.handleLoginActions();
+					}
 //				app.u.dump(" -> infoObj follows:");
 //				app.u.dump(infoObj);
 				app.ext.myRIA.a.showContent('',infoObj);
 				return infoObj //returning this saves some additional looking up in the appInit
 				},
+			
+			
+			handleLoginActions : function()	{
+				$('body').addClass('buyerLoggedIn');
+				$('.username').text(app.u.getUsernameFromCart());
+				},
+
+			handleLogoutActions : function()	{
+				$('body').removeClass('buyerLoggedIn');
+				$('.username').empty();
+				app.u.logBuyerOut();
+				showContent('homepage',{});
+				},
+			
+			
 //handle State and History Of The World.
 //will change what state of the world is (infoObj) and add it to History of the world.
 //will make sure history keeps only last 15 states.
@@ -2733,7 +2754,7 @@ else	{
 					}
 					
 				if(errors == ''){
-					app.calls.authentication.zoovy.init({"login":email,"password":password},{'callback':'authenticateZoovyUser','extension':'myRIA'});
+					app.calls.authentication.zoovy.init({"login":email,"password":password},{'callback':'authenticateBuyer','extension':'myRIA'});
 					app.calls.refreshCart.init({},'immutable'); //cart needs to be updated as part of authentication process.
 //					app.ext.store_crm.calls.buyerProductLists.init('forgetme',{'callback':'handleForgetmeList','extension':'store_prodlist'},'immutable');
 					
