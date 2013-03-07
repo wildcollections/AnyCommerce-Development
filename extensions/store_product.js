@@ -528,7 +528,7 @@ it has no inventory AND inventory matters to merchant
 //				app.u.dump("BEGIN store_product.u.getProductInventory ["+pid+"]");
 				var inv = false;
 //if variations are NOT present, inventory count is readily available.
-				if($.isEmptyObject(app.data['appProductGet|'+pid]['@variations']) && !$.isEmptyObject(app.data['appProductGet|'+pid]['@inventory']))	{
+				if(app.data['appProductGet|'+pid] && $.isEmptyObject(app.data['appProductGet|'+pid]['@variations']) && !$.isEmptyObject(app.data['appProductGet|'+pid]['@inventory']))	{
 					inv = Number(app.data['appProductGet|'+pid]['@inventory'][pid].inv);
 //					app.u.dump(" -> item has no variations. inv = "+inv);
 					}
