@@ -2923,11 +2923,11 @@ else	{
 						}
 					}
 				else	{
-					app.u.dump("WARNING! Something was not passed into handleTemplateFunctions");
-					app.u.dump(" -> template ID: "+infoObj.templateID);
-					app.u.dump(" -> state: "+infoObj.state);
+					app.u.dump("WARNING! Something was not passed into handleTemplateFunctions. state and templateID are required. templateID must also be a template");
+//					app.u.dump(" -> template ID: "+infoObj.templateID);
+//					app.u.dump(" -> state: "+infoObj.state);
 //					app.u.dump(" -> typeof app.ext.myRIA.template[infoObj.templateID]:"+ typeof app.ext.myRIA.template[infoObj.templateID]);
-//					app.u.dump(infoObj);
+					app.u.dump(infoObj);
 					}
 //				app.u.dump("END myRIA.u.handleTemplateFunctions");
 				return r;
