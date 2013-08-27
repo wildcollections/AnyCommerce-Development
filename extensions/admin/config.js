@@ -98,7 +98,13 @@ var admin_config = function() {
 
 ////////////////////////////////////   ACTION    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 		a : {
-			
+
+			showAppChooser : function($target)	{
+				
+				
+				
+				
+				},
 			
 			showPluginManager : function($target)	{
 				$target.empty().showLoading({'message':'Fetching Your Integration Data'});
@@ -464,6 +470,7 @@ else	{
 						'_tag' : {'datapointer' : 'adminDomainList'}
 						}
 					});
+				app.model.addDispatchToQ({'_cmd':'adminSiteTemplateList','_tag':{'datapointer' : 'adminSiteTemplateList'}},'mutable');
 				app.model.dispatchThis('mutable');
 
 				},//showCouponManager				
@@ -958,7 +965,7 @@ $D.dialog('open');
 
 			adminDomainToggleFavoriteExec : function($btn)	{
 				$btn.button({icons: {primary: "ui-icon-tag"},text: false});
-				if($btn.closest('tr').data('IS_FAVORITE') == 1)	{$btn.addClass('ui-state-highlight')}
+				if($btn.closest("[data-is_favorite]").data('is_favorite') == 1)	{$btn.addClass('ui-state-highlight')}
 				$btn.off('click.adminDomainToggleFavoriteExec').on('click.adminDomainToggleFavoriteExec',function(event){
 					$btn.toggleClass('ui-state-highlight');
 					app.model.addDispatchToQ({'_cmd':'adminDomainMacro','DOMAINNAME':$btn.closest('tr').data('DOMAINNAME'),'@updates':["DOMAIN-SET-FAVORITE?IS="+($btn.hasClass('ui-state-highlight') ? 1 : 0)]},'passive');
@@ -981,21 +988,22 @@ $D.dialog('open');
 				$btn.off('click.adminDomainCreateUpdateHostShow').on('click.adminDomainCreateUpdateHostShow',function(event){
 					event.preventDefault();
 					var domain = $btn.closest('[data-domain]').data('domain');
+
 					if(domain)	{
 						var $D = app.ext.admin.i.dialogCreate({
 							'title': $btn.data('mode') + '  host',
-							'data' : (($btn.data('mode') == 'create') ? {'DOMAINNAME':domain} : app.data['adminDomainDetail|'+domain]['@HOSTS'][$btn.closest('tr').data('obj_index')]), //passes in DOMAINNAME and anything else that might be necessary for anycontent translation.
+							'data' : (($btn.data('mode') == 'create') ? {'DOMAINNAME':domain} : $.extend({},app.data['adminDomainDetail|'+domain]['@HOSTS'][$btn.closest('tr').data('obj_index')],{'DOMAINNAME':domain})), //passes in DOMAINNAME and anything else that might be necessary for anycontent translation.
 							'templateID':'domainAddUpdateHostTemplate',
 							'showLoading':false //will get passed into anycontent and disable showLoading.
 							});
 //get the list of projects and populate the select list.  If the host has a project set, select it in the list.
 						var _tag = {'datapointer' : 'adminProjectList','callback':function(rd){
 							if(app.model.responseHasErrors(rd)){
-								$("[data-panel-id='domainNewHostTypeAPP']",$D).anymessage({'message':rd});
+								$("[data-panel-id='domainNewHostTypeSITEPTR']",$D).anymessage({'message':rd});
 								}
 							else	{
 								//success content goes here.
-								$("[data-panel-id='domainNewHostTypeAPP']",$D).anycontent({'datapointer':rd.datapointer});
+								$("[data-panel-id='domainNewHostTypeSITEPTR']",$D).anycontent({'datapointer':rd.datapointer});
 								if($btn.data('mode') == 'update')	{
 									$("input[name='PROJECT']",$D).val(app.data['adminDomainDetail|'+domain]['@HOSTS'][$btn.closest('tr').data('obj_index')].PROJECT)
 									}
@@ -1005,6 +1013,7 @@ $D.dialog('open');
 							}};
 						if(app.model.fetchData(_tag.datapointer) == false)	{
 							app.model.addDispatchToQ({'_cmd':'adminProjectList','_tag':	_tag},'mutable'); //necessary for projects list in app based hosttypes.
+							app.model.dispatchThis();
 							}
 						else	{
 							app.u.handleCallback(_tag);
@@ -1063,10 +1072,10 @@ $D.dialog('open');
 				}, //domainRemoveConfirm
 
 			adminDomainDetailShow : function($btn)	{
-				if($btn.data('mode') == 'dialog')	{$btn.button({icons: {primary: "ui-icon-wrench"},text: true});}
+				if($btn.data('mode') == 'dialog')	{$btn.button({icons: {primary: "ui-icon-pencil"},text: false});}
 				else	{$btn.button({icons: {primary: "ui-icon-pencil"},text: false});}
 
-				var domain = $btn.closest('tr').data('DOMAINNAME');
+				var domain = $btn.closest("[data-domainname]").data('domainname')
 				
 				if(domain)	{
 					if($btn.data('mode') == 'panel' || $btn.data('mode') == 'dialog')	{

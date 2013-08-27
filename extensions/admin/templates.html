@@ -525,169 +525,28 @@ SETUP PAGE TEMPLATE
 
 <div id='pageTemplateSites'>
 
-	
-
-	
-	<div data-app-role='sitesTabContainer'>
-	<ul>
-		<li><a href='#domains' onClick='return false'>Domains</a></li>
-		<li><a href='#partitions' onClick='return false'>Partitions</a></li>
-		<li><a href='#debug' onClick='return false'>Debug</a></li>
-	</ul>
-	
-	<section data-anytab-content='domains' class='clearfix'>
-		<table class='gridTable fullWidth'>
-		<thead>
-		<tr>
-			<th class='alignLeft'>Logo</th>
-			<th class='alignLeft'>Domain</th>
-			<th>Partition</th>
-			<th data-anytable-nosort='true'></th>
-		</tr>
-		</thead>
-		<tbody data-bind="var: rules(@DOMAINS); format:processList; loadsTemplate:domainListTemplate;">
-		
-		</tbody>
-		</table>
-	</section>
-	
-	<section data-anytab-content='partitions' class='clearfix'>
-		<table class='gridTable fullWidth'>
-		<thead>
-		<tr>
-			<th>#/PRT</th>
-			<th>Name</th>
-			<th>Segmented Customers</th>
-			<th>Segmented Navcats</th>
-	</tr>
-		</thead>
-		<tbody data-bind="var: rules(@PRTS); format:processList; loadsTemplate:partitionListTemplate;">
-		
-		</tbody>
-		</table>
-	</section>
-	
-	<section data-anytab-content='debug' class='clearfix'>
-	Coming Soon
-	</section>
-	
-	</div>
+	<ul data-bind="var: rules(@DOMAINS); format:processList; loadsTemplate:domainListTemplate;	" class='listStyleNone ui-widget noPadOrMargin clearfix'></ul>
 
 </div>
 
-<table>
-
-<tr id='domainListTemplate'>
-	<td><img src='blank.gif' class='prodThumb' data-bind='var: domain(LOGO); format:imageURL;' width='150' height='50' /></td>
-	<td data-bind="var: domain(DOMAINNAME); format:text;"></td>
-	<td data-bind="var: domain(PRT); format:text; hideZero:false;" class='alignCenter'></td>
-	<td class='alignRight'>
-		<button data-app-event="admin|domainPutInFocus">use domain</button>
-		<button data-app-event="admin|domainView">view store</button>
-<!--		<button data-app-event="admin|domainEdit">edit</button> -->
-		<button data-app-event="admin_config|adminDomainDetailShow" data-mode='dialog'>settings</button>
-	</td>
-</tr>
-
-<tr id='partitionListTemplate'>
-	<td data-bind="var: domain(id); format:text;"></td>
-	<td data-bind="var: partition(name); format:text;"></td>
-	<td data-bind="var: domain(p_customers); format:text; hideZero:false;" class='alignCenter'></td>
-	<td data-bind="var: domain(p_navcats); format:text; hideZero:false;" class='alignCenter'></td>
-</tr>
-
-</table>
-
-
-<div id='pageTemplateSetupAppchooser' class='page pageSetup pageSetupAppchooser clearfix'>
-	<h1>Choose a Project</h1>
-	<div class='ui-widget ui-widget-content ui-corner-all stdPadding marginBottom alignCenter'>
-		<ul class='alignCenter noPadOrMargin listStyleNone clearfix'>
-			
-			<li class='floatLeft marginRight ui-state-active ui-corner-bottom pointer' data-app-event='admin|appChooserAppPreview' data-appid='fashion'>
-			<img src='app-fashion/preview-120x120.jpg' width='120' height='100' alt='Fashion' />
-			<div>Fashion</div>
-			</li>
-			
-			<li class='floatLeft marginRight ui-state-default ui-corner-bottom pointer' data-app-event='admin|appChooserAppPreview' data-appid='mobile'>
-			<img src='app-mobile/preview-120x120.jpg' width='120' height='100' alt='mobile' />
-			<div>Mobile</div>
-			</li>
-			
-			<li class='floatLeft marginRight ui-state-default ui-corner-bottom pointer' data-app-event='admin|appChooserAppPreview' data-appid='b2b'>
-			<img src='app-b2b/preview-120x120.jpg' width='120' height='100' alt='Shadow' />
-			<div>B 2 B</div>
-			</li>
-
-		</ul>
-	</div>	
+<ul>
 	
-	<div class='ui-widget ui-widget-content ui-corner-all stdPadding' id='appChooserDetailPanel'>
-
-		<section id='details_fashion' data-app-role='appPreviewPanel'  data-appid='fashion' data-app-repo='https://github.com/zoovy/AnyCommerce-Development/'>
-
-			<div class='marginBottom clearfix'>
-				<div class='floatRight alignRight'>
-					<button class='smallButton' data-app-event="admin|appChooserAppChoose">Choose</button>
-					<button class='smallButton' data-app-event="admin|appChooserFork">Fork</button>
-					<button class='smallButton' data-app-event="admin|appChooserAppDownload">Download</button>
-				</div>
-				<h2>Fashion</h2>
-			</div>
-			<div class='clearfix'>
-<img src='app-fashion/preview-374x500.jpg' width='374' height='500' alt='Fashion' class='floatLeft marginRight' />
-<p>Fashion is intended for apparel and jewelry sellers, however it could be easily adopted for any industry.</p>
-<p>The main navigation bar, homepage banner and homepage product lists rely heavily on product tagging, specifically new arrivals, best sellers, sale and clearance items.</p>
-<p>The category pages feature subcategory and product imagery at a 1x1 aspect ratio (square).</p>
-			</div>
-		</section>
-
-
-		<section id='details_mobile' data-app-role='appPreviewPanel' class='displayNone' data-appid='mobile' data-app-repo='https://github.com/zoovy/AnyCommerce-Development/'>
-
-			<div class='marginBottom clearfix'>
-				<div class='floatRight alignRight'>
-					<button class='smallButton' data-app-event="admin|appChooserAppChoose">Choose</button>
-					<button class='smallButton' data-app-event="admin|appChooserFork">Fork</button>
-					<button class='smallButton' data-app-event="admin|appChooserAppDownload">Download</button>
-				</div>
-				<h2>Mobile</h2>
-			</div>
-			<div class='clearfix'>
-<img src='app-mobile/preview-193x500.jpg' width='193' height='500' alt='Mobile' class='floatLeft marginRight' />
-<p>Mobile is intended for all sellers, for use on their mobile domain. The site is responsive, so it will work on a variety of screen resolutions and devices.</p>
-<p>The homepage product lists rely heavily on product tagging, specifically new arrivals and best sellers. The various pages (product and category) are designed for a smaller screen size.</p>
-<p>The category pages feature subcategory and product imagery at a 1x1 aspect ratio (square).</p>
-			</div>
-		</section>
-
-
-		<section id='details_b2b' data-app-role='appPreviewPanel' class='displayNone' data-appid='b2b' data-app-repo='https://github.com/zoovy/AnyCommerce-Development/'>
-
-			<div class='marginBottom clearfix'>
-				<div class='floatRight alignRight'>
-					<button class='smallButton' data-app-event="admin|appChooserAppChoose">Choose</button>
-					<button class='smallButton' data-app-event="admin|appChooserFork">Fork</button>
-					<button class='smallButton' data-app-event="admin|appChooserAppDownload">Download</button>
-				</div>
-				<h2>B2B</h2>
-			</div>
-			<div class='clearfix'>
-<img src='app-b2b/preview-500x486.jpg' width='500' height='486' alt='b2b' class='floatLeft marginRight' />
-<p>B2B is indended for business to business sellers.  It's a no-frills website that offers the buyer the ability to purchase directly from the category page and in bulk.</p>
-<p>The category pages feature subcategory and product imagery at a 1x1 aspect ratio (square).</p>
-			</div>
-		</section>
-
-
-	</div>
-
-</div>
-
-
-
-
-
+	<li id='domainListTemplate' class='ui-widget-content ui-corner-all domainPanel'>
+		<div class='marginBottom alignCenter'><img src='blank.gif' class='prodThumb' data-bind='var: domain(LOGO); format:imageURL;' width='160' height='80' /></div>
+		
+		<h4 data-bind="var: domain(DOMAINNAME); format:text;"></h4>
+		<p>
+			<div>Partition: <span data-bind="var: domain(PRT); format:text; hideZero:false;" class='marginLeft'></span></div>
+		</p>
+		<div class='buttonset'>
+			<button data-app-event="admin|domainPutInFocus">Use Domain</button>
+			<button data-app-event="admin|domainView" data-mode='Site'>View Store</button>
+			<button data-app-event='admin_templateEditor|templateEditorShow' data-button-text='false' data-mode='Site'>Edit Project</button>
+			<button data-app-event="admin_config|adminDomainToggleFavoriteExec">Tag as Favorite</button>
+			<button data-app-event="admin_config|adminDomainDetailShow" data-mode='dialog'>Edit Domain Settings</button>
+		</div>
+	</li>
+</ul>
 
 
 
