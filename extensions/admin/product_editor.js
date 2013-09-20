@@ -1453,7 +1453,7 @@ if($editedInputs.length)	{
 					//if any input for the record has been updated, update qty and loc.
 					if($('.edited',$tr).length){
 						records ++;
-						cmdObj['@updates'].push("INVENTORY?SKU="+$tr.data('sku')+"&WAS="+$tr.data('qty')+"&IS="+$("input[name='qty']").val()+"&LOC="+$("input[name='loc']").val());
+						cmdObj['@updates'].push("INVENTORY?SKU="+$tr.data('sku')+"&WAS="+$tr.data('qty')+"&IS="+$("input[name='qty']", $tr).val()+"&LOC="+$("input[name='loc']", $tr).val());
 						}
 					});
 				
