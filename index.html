@@ -44,6 +44,7 @@ all css includes need to be after the js that changes the base url.
 css files should be included before any .js file to ensure they are downloaded in parallel
 -->
 <link rel="stylesheet" type="text/css" href="app-quickstart.css" />
+<link rel="stylesheet" type="text/css" href="_powerlandonline_styles.css" />
 <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/ui-lightness/jquery-ui.css" />
 
 
@@ -64,11 +65,7 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 </head>
 
 <body>
-<!-- DELETE THIS WHEN YOU GET STARTED -->
-<h1>WELCOME TO QUICKSTART</h1>
-This file is intended to go along with the 10-step tutorial at:
-<a href="https://github.com/zoovy/AnyCommerce-Development/wiki/quickstart">https://github.com/zoovy/AnyCommerce-Development/wiki/quickstart</a>
-<!-- /DELETE THIS WHEN YOU GET STARTED -->
+
 
 
 
@@ -107,26 +104,68 @@ ANIMATION TESTING
 	<div data-animation-mouseenter="cogs?animFunc=fwd" data-animation-mouseout="cogs?animFunc=back" style="width: 55px; height: 55px;" id="cogs"></div>
 </div>
 -->
-
-
-<!-- VIEW CONTENT -->
-<!-- leave the appView div, put your your html here ...  -->
-
-	<!--
-	** REMINDER : DO NOT PUT ANY GRAPHICS/CONTENT THAT SHOULD NOT APPEAR ON EVERY PAGE IN THE VIEW (HERE)
-	**				  INSTEAD PUT THEM INTO <div id="homepageTemplate"></div>
-	-->
 	
-<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
 
-<!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
-<div id='appNav'>
-	<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
-	<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+<!-- Header -->
+	<div class='header clearfix'>
+		<div class="logoSection">
+			<div id='logo' onClick="showContent('homepage');" class='pointer'>
+				<img width="140" height="62" src="images/powerlandlogo.png">
+			</div>
+			<div class="cartSection">
+				<a onClick="return showContent('cart',{});" class='pointer'>
+					<img src="images/cart.png" class="cartIcon" />
+					<span class="cartItemCount"></span> Items in your shopping cart
+				</a>
+				<h5>Toll Free: (888) 807-6660</h5>
+			</div>
+		</div>
+		<div class="searchBarSection">
+			<form name='headerSearchFrm' action='#' class='productSearchForm' method="get" id="searchFunc">
+				<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault" placeholder="Search" id="searchBar"/>
+				<input class="search searchBtn pointer" type="submit" value="Go" id="searchButton" />
+			</form>
+			<ul class="headerNav">
+				<li>Home</li> |
+				<li>Contact</li> |
+				<li>Returns</li> |
+				<li>Login</li> |
+				<li>Share This Page</li>
+			</ul>
+		</div>
+	</div>
+	<div class="sideBar">
+		<div class="sideBarCategories">
+			<h5>Categories</h5>
+			<ul id="tier1categories"></ul>
+		</div>
+	</div>
+
+<div class="container">
+	<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
+
+	<!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
+	<div id='appNav'>
+		<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
+		<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+	</div>
+
+	<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
+</div>	
+
+<div class="footer clearfix">
+	<ul class="footerNav">
+		<li>Home</li> |
+		<li>Contact</li> |
+		<li>Returns</li> |
+		<li>Login</li> |
+		<li>Share This Page</li>
+	</ul>
+	<div class="copyrightSection">
+		<p>Copyright © 2013. Please read our Privacy Statement & Policies.</p>
+		<p>E-Commerce solution provided by Zoovy.</p>
+	</div>
 </div>
-
-<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
-
 <!-- ... your html ends -->
 <!-- /VIEW CONTENT -->
 </div>
@@ -171,6 +210,8 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
+
+	
 	
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
 

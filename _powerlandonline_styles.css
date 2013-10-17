@@ -1,0 +1,123 @@
+body { 
+	background: url("images/pl_body_bg-1x574.gif") repeat-x scroll center top #FFFFFF;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 10px 0 0;
+    padding: 0;
+}
+.clear {clear: both;}
+
+/********* Fixed Content CSS start **********/
+#appView {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #939598;
+    border-radius: 18px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/********* Header CSS start **********/
+.header {height: 112px; position: relative;}
+#logo {margin: 15px; float: left;}
+.cartSection {
+	float:right;
+    margin: 10px;
+}
+.cartSection a{
+    color: #000000;
+    text-decoration: none;
+}
+.cartSection a:hover{
+    color: #EB7125;
+}
+.cartIcon {padding: 5px 0px;}
+.cartSection h5 {
+	color: #EB7125;
+	text-align: right;
+	margin-top: 20px;
+}
+.searchBarSection {
+	background: none repeat scroll 0 0 #EB7125;
+    height: 30px;
+    position: absolute;
+    top: 83px;
+	width: 900px;
+}
+.productSearchForm {
+    float: left;
+    margin: 4px 0 0 7px;
+    width: 225px;
+}
+
+.searchBtn {
+    background: none repeat scroll 0 0 #D5DBDB;
+    border: medium none;
+    padding: 1px;
+}
+
+.headerNav {
+	margin:0px;
+	text-align: center;
+    color: #FFFFFF;
+}
+.headerNav li {
+    display: inline;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 12px;
+}
+/********* Header CSS End **********/
+
+
+/********* Sidebar CSS Start **********/
+.sideBar {
+	width:188px; 
+	background:#ffffff; 
+	float: left; 
+	height:100%; 
+	border-right: 1px solid #939598;
+}
+.sideBarCategories {background:#d7d9db;}
+
+.sideBarCategories > h5 {
+    border-bottom: 1px solid #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+}
+.sideBarCategories ul {
+    margin: 0;
+    padding: 10px 0 20px 45px;
+}
+.sideBarCategories li {
+    font-size: 13px;
+    list-style-image: url("images/pl_left_bull-7x11.gif");
+    padding: 7px 0;
+}
+/********* Sidebar CSS End **********/
+
+
+/********* Footer CSS Start **********/
+.footerNav {
+	margin:0px;
+	text-align: center;
+    color: #FFFFFF;
+	background: #EB7125;
+}
+.footerNav li {
+    display: inline;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 12px;
+}
+
+.copyrightSection {
+	text-align: center;
+	font-size: 12px;
+}
+.copyrightSection p {margin: 6px 0px;}
+/********* Footer CSS End **********/
+/********* Fixed Content CSS End **********/
+
+
+/********* Container Content CSS Start **********/
+.container {width:710px; float: right;}
