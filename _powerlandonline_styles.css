@@ -81,21 +81,23 @@ body {
 
 
 /********* Sidebar CSS Start **********/
+.mainBody {display:table;}
+.sideBar, .container{display: table-cell;}
 .sideBar {
-	width:188px; 
+	max-width:188px; 
 	background:#ffffff; 
-	float: left; 
 	height:100%; 
 	border-right: 1px solid #939598;
+	vertical-align: top;
 }
 .sideBarCategories {background:#d7d9db;}
 
-.sideBarCategories > h5 {
-    border-bottom: 1px solid #FFFFFF;
+.sideBar h5 {
     padding: 10px 0;
     text-align: center;
 }
 .sideBarCategories ul {
+    border-top: 1px solid #FFFFFF;
     margin: 0;
     padding: 10px 0 20px 45px;
 }
@@ -103,6 +105,18 @@ body {
     font-size: 13px;
     list-style-image: url("images/pl_left_bull-7x11.gif");
     padding: 7px 0;
+}
+.newsletterSection {
+	background: #EB7125;
+	padding: 0px 9px 9px;
+}
+.sideBarFormFrm {
+	width: 164px;
+}
+#sideBarSignUpButton {
+    background: none repeat scroll 0 0 #D7D9DB;
+    border: 1px solid #939598;
+    padding: 3px;
 }
 /********* Sidebar CSS End **********/
 
@@ -131,4 +145,4 @@ body {
 
 
 /********* Container Content CSS Start **********/
-.container {width:710px; float: right;}
+.container {width:710px;}

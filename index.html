@@ -149,24 +149,40 @@ ANIMATION TESTING
 			</ul>
 		</div>
 	</div>
+<div class="mainBody">
 	<div class="sideBar">
 		<div class="sideBarCategories">
 			<h5>Categories</h5>
 			<ul id="tier1categories"></ul>
 		</div>
+		<div class="newsletterSection">
+			<h5>Newsletter</h5>
+			<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
+				<div class='marginRight'>
+					<input type='text'  maxlength='50' size='30' name='fullname' class='sideBarFormFrm' placeholder='Name' />
+				</div>
+				<div class='marginRight marginTop'>
+					<input type='email'  maxlength='50' size='30' name='login' class='sideBarFormFrm' placeholder='Email' />
+				</div>
+				<div class='alignRight marginTop'>
+					<input type='submit' value='Submit' id='sideBarSignUpButton'>
+				</div>
+			</form>
+		</div>
 	</div>
 
-<div class="container">
-	<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
+	<div class="container">
+		<div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
 
-	<!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
-	<div id='appNav'>
-		<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
-		<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+		<!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
+		<div id='appNav'>
+			<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
+			<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
+		</div>
+
+		<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 	</div>
-
-	<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
-</div>	
+</div>
 
 <div class="footer clearfix">
 	<ul class="footerNav">
