@@ -6,6 +6,17 @@ body {
     padding: 0;
 }
 .clear {clear: both;}
+/********* App Preview CSS Start ********/
+#appPreView {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #939598;
+    border-radius: 18px 18px 18px 18px;
+    min-height: 200px;
+}
+#appPreViewLogo {padding: 5px 175px;}
+#loader {text-align: center; margin-top: 15px;}
+/********* App Preview CSS End ********/
+
 
 /********* Fixed Content CSS start **********/
 #appView {
