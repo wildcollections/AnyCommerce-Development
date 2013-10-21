@@ -118,13 +118,17 @@ body {
     border: 1px solid #939598;
     padding: 3px;
 }
+.recentViewSection {
+	min-height: 100px;
+	border-bottom: 1px solid #D7D9DB;
+}
 .recentViewHeader {background: #D7D9DB;}
 .productList li.recentViewList{
 	width:180px;
 	padding: 4px;
 	margin: 0px;
 	height: 100%;
-	border-bottom: 1px solid #D7D9DB;
+	border-top: 1px solid #D7D9DB;
 }
 .recentViewList div{
 	padding: 8px 0px;
@@ -134,6 +138,16 @@ body {
 	width: 125px;
 	text-align: center;
 }
+.sideBarImages {
+	margin: 10px 0px;
+}
+ .sideBarImages img {
+	margin:0px auto;
+	display: block;
+ }
+ .visitBlogImg{
+	padding: 20px 0px;
+ }
 /********* Sidebar CSS End **********/
 
 
