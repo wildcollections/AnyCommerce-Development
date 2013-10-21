@@ -241,11 +241,13 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
-
-	
-	
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
-
+	<div id="slideshowContainer" class="clearfix marginBottom">
+		<div id="slideshowNav"></div>
+		<ul id="slideshow">
+			<li><a href="#"><img src='images/pl_hp_garage_1b.jpg' /></a></li>
+			<li><a href="#"><img src='images/tri_banner.jpg' /></a></li>
+		</ul>
+	</div>
 	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; hide_summary:1; before:<h2>Featured Items</h2>; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
 	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 

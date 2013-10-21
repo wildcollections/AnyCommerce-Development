@@ -144,5 +144,54 @@ body {
 /********* Fixed Content CSS End **********/
 
 
-/********* Container Content CSS Start **********/
+/********* Container CSS Start **********/
 .container {width:710px;}
+/********* Container CSS End **********/
+
+
+/********* Homepage CSS Start **********/
+#slideshowContainer {
+	position:relative;
+	z-index:10;
+	width: 600px;	
+	height: 284px;
+	margin:0 auto;
+	overflow:hidden;
+	z-index:5;
+}
+#slideshow {
+	width: 600px;	
+	height: 284px;
+	position:absolute; 
+	left:0; 
+	top:0;
+	overflow:hidden;
+}
+#slideshowNav {
+    bottom: 5px;
+    right: 10px;
+    position: absolute;
+    text-align: left;
+    z-index: 50;
+}
+#slideshowNav a {
+    background: none repeat scroll 0 0 #FFA46C;
+    border: 1px solid #EB7125;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 10px;
+    height: 12px;
+    margin: 0 5px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 12px;
+}
+#slideshowNav a:hover, #nav a.activeSlide {
+    color: #EB7125;
+}
+#slideshowNav a:focus {
+    outline: medium none;
+}
+/********* Homepage CSS End **********/

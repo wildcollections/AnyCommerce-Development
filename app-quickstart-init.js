@@ -7,6 +7,7 @@ app.rq.push(['extension',0,'orderCreate','extensions/checkout/extension.js']);
 app.rq.push(['extension',0,'cco','extensions/cart_checkout_order.js']);
 
 
+app.rq.push(['extension',0,'store_powerlandonline','extensions/store_powerlandonline.js']);
 app.rq.push(['extension',0,'store_prodlist','extensions/store_prodlist.js']);
 app.rq.push(['extension',0,'store_navcats','extensions/store_navcats.js']);
 app.rq.push(['extension',0,'store_search','extensions/store_search.js']);
@@ -18,6 +19,7 @@ app.rq.push(['extension',0,'myRIA','app-quickstart.js','startMyProgram']);
 app.rq.push(['extension',0,'entomologist','extensions/entomologist/extension.js']);
 app.rq.push(['extension',0,'tools_animation','extensions/tools_animation.js']);
 
+app.rq.push(['script',0,app.vars.baseURL+'extensions/jquery-cycle.js']);
 //app.rq.push(['extension',1,'google_analytics','extensions/partner_google_analytics.js','startExtension']);
 app.rq.push(['extension',1,'tools_ABtesting','extensions/tools_ABtesting.js']);
 //app.rq.push(['extension',0,'partner_addthis','extensions/partner_addthis.js']);
