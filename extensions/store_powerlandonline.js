@@ -48,6 +48,13 @@ var store_powerlandonline = function() {
 						//already  rendered
 					}
 					}]);
+					
+				app.rq.push(['templateFunction','productTemplate','onDeparts',function(P) {
+					var $container = $('#recentlyViewedItemsContainer');
+					$container.show();
+					$("ul",$container).empty(); //empty product list
+					$container.anycontent({data:app.ext.myRIA.vars.session}); //build product list
+					}]);
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
 

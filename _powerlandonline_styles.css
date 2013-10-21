@@ -118,6 +118,22 @@ body {
     border: 1px solid #939598;
     padding: 3px;
 }
+.recentViewHeader {background: #D7D9DB;}
+.productList li.recentViewList{
+	width:180px;
+	padding: 4px;
+	margin: 0px;
+	height: 100%;
+	border-bottom: 1px solid #D7D9DB;
+}
+.recentViewList div{
+	padding: 8px 0px;
+}
+.recentViewProdName{
+	float:right;
+	width: 125px;
+	text-align: center;
+}
 /********* Sidebar CSS End **********/
 
 
