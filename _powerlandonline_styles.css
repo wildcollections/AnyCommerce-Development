@@ -69,13 +69,20 @@ body {
 .headerNav {
 	margin:0px;
 	text-align: center;
-    color: #FFFFFF;
+	color: #FFFFFF;
 }
 .headerNav li {
     display: inline;
     font-size: 14px;
     line-height: 30px;
     padding: 0 12px;
+}
+.headerNav a{
+    color: #FFFFFF;
+	text-decoration: none;
+}
+.headerNav a:hover {
+	text-decoration: underline;
 }
 /********* Header CSS End **********/
 
