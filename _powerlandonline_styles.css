@@ -171,7 +171,13 @@ body {
     line-height: 30px;
     padding: 0 12px;
 }
-
+.footerNav a{
+    color: #FFFFFF;
+	text-decoration: none;
+}
+.footerNav a:hover {
+	text-decoration: underline;
+}
 .copyrightSection {
 	text-align: center;
 	font-size: 12px;
