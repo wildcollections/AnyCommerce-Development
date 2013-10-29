@@ -607,7 +607,7 @@ the tabs are built in an onComplete.  ID's are added based on sku AND index, so 
 or the tab clicked won't open the right content.
 It's done this way because ID's hard coded into template are bad mojo (templates are recycled) and because using data-binds to add id's caused some serious issues
 -->
-<div class='prodTabs tabbedProductContent'>
+<div class='prodTabs tabbedProductContent marginBottom'>
 
 	<ul class='tabs'>
 		<li class='prodDescTab'><a href='#prodDesc'>Description</a></li>
@@ -654,9 +654,9 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 </tr>
 </table>
 <div class='prodlistRelatedContainer'>
-	<div class="featProdHeader">Accessories</div>
+	<div class="featProdHeader displayNone" data-bind='var: product(zoovy:accessory_products); format:showIfSet;'>Accessories</div>
 	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; withInventory:1; withVariations:1;"></ul>
-	<div class="featProdHeader">Related Items</div>
+	<div class="featProdHeader displayNone" data-bind='var: product(zoovy:related_products); format:showIfSet;'>Related Items</div>
 	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; withInventory:1; withVariations:1;"></ul>
 </div>
 
