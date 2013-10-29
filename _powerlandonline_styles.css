@@ -315,4 +315,12 @@ a:hover {color: #eb7125;}
 	font-size: 16px;
 	font-weight: 700;
 }
+.ui-button.ui-button-text.ui-corner-all.ui-state-default.addToCartButton {
+    background: none repeat scroll 0 0 #EB7125;
+    border: medium none;
+    color: #FFFFFF;
+    font-weight: bold;
+	font-size: 16px;
+	padding: 7px 15px;
+}
 /********* ProductTemplate CSS End **********/
