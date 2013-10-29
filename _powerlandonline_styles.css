@@ -232,3 +232,18 @@ body {
     outline: medium none;
 }
 /********* Homepage CSS End **********/
+
+
+/********* Company Pages CSS Start **********/
+.sideline {
+	border:1px solid #939598;
+	margin: 10px 4px 24px;
+	padding: 15px;
+}
+.sideline a {
+	color:#000000;
+}
+.sideline a:hover {
+	color: #eb7125;
+}
+/********* Company Pages CSS End **********/
