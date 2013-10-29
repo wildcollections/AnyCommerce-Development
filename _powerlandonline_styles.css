@@ -1,3 +1,4 @@
+/********* General CSS Start **********/
 body { 
 	background: url("images/pl_body_bg-1x574.gif") repeat-x scroll center top #FFFFFF;
     color: #000000;
@@ -6,6 +7,21 @@ body {
     padding: 0;
 }
 .clear {clear: both;}
+a {color: #000000; text-decoration: none;}
+a:hover {color: #eb7125;}
+.container {width:710px;}
+.templateContent {padding: 10px;}
+.featProdHeader {
+	height:30px; 
+	background:#eb7125; 
+	text-align:left; 
+	color:#FFFFFF; 
+	font-size:13px; 
+	line-height:30px; 
+	padding:0px 10px;
+}
+/********* General CSS End **********/
+
 /********* App Preview CSS Start ********/
 #appPreView {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -33,13 +49,6 @@ body {
 .cartSection {
 	float:right;
     margin: 10px;
-}
-.cartSection a{
-    color: #000000;
-    text-decoration: none;
-}
-.cartSection a:hover{
-    color: #EB7125;
 }
 .cartIcon {padding: 5px 0px;}
 .cartSection h5 {
@@ -187,10 +196,6 @@ body {
 /********* Fixed Content CSS End **********/
 
 
-/********* Container CSS Start **********/
-.container {width:710px;}
-.templateContent {padding: 10px;}
-/********* Container CSS End **********/
 
 
 /********* Homepage CSS Start **********/
@@ -238,15 +243,7 @@ body {
 #slideshowNav a:focus {
     outline: medium none;
 }
-.featProdHeader {
-	height:30px; 
-	background:#eb7125; 
-	text-align:left; 
-	color:#FFFFFF; 
-	font-size:13px; 
-	line-height:30px; 
-	padding:0px 10px;
-}
+
 /********* Homepage CSS End **********/
 
 
@@ -296,3 +293,25 @@ body {
 	border: none;
 }
 /********* ProductListTemplate CSS End **********/
+
+
+/********* ProductTemplate CSS Start **********/
+.productPage{
+	color: #000000;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 17px;
+}
+.prodBigImage {
+	border: 1px solid #939598;
+}
+.prodViewerContainer .prodThumbs div {
+	margin:6px;
+	border: 1px solid #939598;
+}
+.prodName {
+	color: #666666;
+	font-size: 16px;
+	font-weight: 700;
+}
+/********* ProductTemplate CSS End **********/
