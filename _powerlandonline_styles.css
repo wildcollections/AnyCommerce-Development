@@ -189,6 +189,7 @@ body {
 
 /********* Container CSS Start **********/
 .container {width:710px;}
+.templateContent {padding: 10px;}
 /********* Container CSS End **********/
 
 
@@ -236,9 +237,6 @@ body {
 }
 #slideshowNav a:focus {
     outline: medium none;
-}
-.homepageContent {
-	padding: 10px;
 }
 .featProdHeader {
 	height:30px; 
