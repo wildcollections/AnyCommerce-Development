@@ -260,6 +260,18 @@ a:hover {color: #eb7125;}
 .sideline a:hover {
 	color: #eb7125;
 }
+.companyPageHeader {
+	background: none repeat scroll 0 0 #364D6E;
+    color: #FFFFFF;
+    font-size: 17px;
+    padding: 3px 8px;
+}
+.textContentArea p{margin: 8px 4px;}
+.textContentArea h3 {
+	color: #666666;
+	margin: 15px 4px 0px;
+}
+
 /********* Company Pages CSS End **********/
 
 
