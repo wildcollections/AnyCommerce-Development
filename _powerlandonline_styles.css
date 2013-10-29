@@ -241,13 +241,13 @@ body {
 	padding: 10px;
 }
 .featProdHeader {
-height:30px; 
-background:#eb7125; 
-text-align:left; 
-color:#FFFFFF; 
-font-size:13px; 
-line-height:30px; 
-padding:0px 10px;
+	height:30px; 
+	background:#eb7125; 
+	text-align:left; 
+	color:#FFFFFF; 
+	font-size:13px; 
+	line-height:30px; 
+	padding:0px 10px;
 }
 /********* Homepage CSS End **********/
 
@@ -265,3 +265,36 @@ padding:0px 10px;
 	color: #eb7125;
 }
 /********* Company Pages CSS End **********/
+
+
+/********* ProductListTemplate CSS Start **********/
+.productList > li	{
+	width:148px; 
+	height:275px; 
+	position:relative;
+}
+.prodListImage {
+	border:1px solid #939598;
+	width: 145px;
+	height: 145px;
+}
+.prodListName {
+	margin-bottom: 5px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	height: 68px;
+}
+.prodListPrice {
+	color:#eb7125;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.prodListButton.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+	background: #EB7125;
+	color: #ffffff;
+	font-weight: bold;
+	border: none;
+}
+/********* ProductListTemplate CSS End **********/
