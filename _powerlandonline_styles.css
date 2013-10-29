@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 .clear {clear: both;}
-a {color: #000000; text-decoration: none;}
+a {color: #222222; text-decoration: none;}
 a:hover {color: #eb7125;}
 .container {width:710px;}
 .templateContent {padding: 10px;}
@@ -20,6 +20,8 @@ a:hover {color: #eb7125;}
 	line-height:30px; 
 	padding:0px 10px;
 }
+.breadcrumb li a {font-weight: bold;}
+.breadcrumb li:last-child a:hover{color: #eb7125;}
 /********* General CSS End **********/
 
 /********* App Preview CSS Start ********/
@@ -74,7 +76,6 @@ a:hover {color: #eb7125;}
     border: medium none;
     padding: 1px;
 }
-
 .headerNav {
 	margin:0px;
 	text-align: center;
