@@ -281,6 +281,13 @@ a:hover {color: #eb7125;}
 	height:275px; 
 	position:relative;
 }
+.quickView {
+    background: none repeat scroll 0 0 #EB7125;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    padding: 4px;
+}
 .prodListImage {
 	border:1px solid #939598;
 	width: 145px;
