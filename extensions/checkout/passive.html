@@ -7,7 +7,7 @@ The chkout prefix is reserved for checkout.
 
 item list and summary are separate just to give more control over location.
 -->
-<div id='checkoutTemplate' class='checkoutFormContainer' data-app-role='checkout'>
+<div id='checkoutTemplate' class='checkoutFormContainer templateContent' data-app-role='checkout'>
 
 	<form action='#'>
 	<input type='hidden' name='bill/shortcut' data-bind="var: cart(bill/shortcut); format:popVal;" />
@@ -18,7 +18,7 @@ item list and summary are separate just to give more control over location.
 		<legend class='headerPadding' >Email / Account Login</legend>
 		<div class='panelContent' data-bind='format:loadsTemplate; loadsTemplate: chkoutPreflightTemplate; useParentData:true;'></div>
 		<div data-app-role='buyerLogout' class='displayNone pointer' data-app-event='orderCreate|buyerLogout'>
-			Not you? <span class='lookLikeLink zlink'>click here</span>.
+			Not you? <span class='lookLikeLink zlink'>Click Here</span>.
 		</div>
 	</fieldset>
 
@@ -45,7 +45,7 @@ Not used in passive
 		<div data-app-role='billToShipContainer' >
 		<label>
 		<input type='checkbox' name='want/bill_to_ship' data-bind="var: cart(want/bill_to_ship); format:popVal; hideZero:false;" checked='checked' data-app-event='orderCreate|tagAsBillToShip' />
-		ship to billing address
+		Ship to Billing Address
 		</label>
 		</div>
 	</fieldset>
@@ -246,8 +246,8 @@ do NOT change any div id's or messaging will not work properly.
 	<div class='giftCardContainer' data-app-role="giftcardContainer">
 	<label for='giftcardCode'>Gift Certificate Code:</label>
 	<input type='text' name='giftcard' size='16'  data-app-event='orderCreate|addTriggerButtonClick' />
-	<button data-app-event='orderCreate|execGiftcardAdd'>add</button> 
-	<small data-app-role='giftcardHint' class='zhint hint displayNone'>if you wish to combine gift cards with another payment method, enter them here</small>
+	<button data-app-event='orderCreate|execGiftcardAdd'>Add</button> 
+	<small data-app-role='giftcardHint' class='zhint hint displayNone'>If you wish to combine gift cards with another payment method, enter them here</small>
 	</div>
 
 	<div data-app-role='paymentQContainer' class='marginBottom'>
@@ -304,10 +304,10 @@ the defaultVar on prodName & image is for promotions, which have a 'description'
 <table class='fullWidth gridTable'>
 <thead>
 <tr>
-	<th colspan='2' class='alignLeft'>product information</th>
-	<th class='alignRight'>qty</th>
-	<th class='alignRight'>price</th>
-	<th class='alignRight'>item total</th>
+	<th colspan='2' class='alignLeft'>Product information</th>
+	<th class='alignRight'>Qty</th>
+	<th class='alignRight'>Price</th>
+	<th class='alignRight'>Ittem Total</th>
 </tr>
 </thead>
 <tbody data-bind='var: cart(@ITEMS); format:processList; loadsTemplate:chkoutCartItemTemplate;'></tbody>
@@ -335,15 +335,10 @@ the defaultVar on prodName & image is for promotions, which have a 'description'
 
 	<div data-bind='var: cart(sum/balance_due_total); format:orderBalance; className:orderBalanceDue; hideZero:false; currencySign: $; pretext:Balance Due: ; extension:cco;'></div>
 
-	<div class='couponEntryContainer' data-app-role='couponContainer'>
-		<label for='coupon'>Coupon/Promo Code:</label>
-		<input type='text' name='coupon' size='8'  data-app-event='orderCreate|addTriggerButtonClick' />
-		<button data-app-event="orderCreate|execCouponAdd" >add</button>
-	</div>
 
 <!-- the table is here in an attempt to address a IE8 specific bug. the button jumps around the page, but only when returning from paypal. odd. -->
-<table class='noPadOrMargin'><tr><td>
-	<button data-app-event="orderCreate|execCartOrderCreate">
+<table class='marginTop'><tr><td>
+	<button class="placeOrderButton" data-app-event="orderCreate|execCartOrderCreate">
 		Place Order
 	</button>
 </td></tr></table>

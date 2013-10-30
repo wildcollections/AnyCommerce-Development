@@ -343,3 +343,16 @@ a:hover {color: #eb7125;}
 	padding: 7px 15px;
 }
 /********* ProductTemplate CSS End **********/
+
+
+/********* Cart/Checkout CSS Start **********/
+.placeOrderButton.ui-state-highlight.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+	font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.placeOrderButton.ui-state-highlight.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:hover {
+	background:url("images/ui-bg_flat_75_ffffff_40x100.png") repeat-x scroll 50% 50% #FFFFFF;
+	color: #eb7125;
+}
+/********* Cart/Checkout CSS End **********/
