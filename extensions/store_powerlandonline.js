@@ -57,7 +57,32 @@ var store_powerlandonline = function() {
 					}]);
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
-
+				
+				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+					 
+				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+					 
+				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+				
+				
 				return r;
 				},
 			onError : function()	{
