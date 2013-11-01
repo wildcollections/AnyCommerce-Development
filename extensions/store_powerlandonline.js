@@ -82,7 +82,37 @@ var store_powerlandonline = function() {
 					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 				
+				app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
 				
+				app.rq.push(['templateFunction','cartTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+					
+				app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+					 
+				app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);	 
 				return r;
 				},
 			onError : function()	{

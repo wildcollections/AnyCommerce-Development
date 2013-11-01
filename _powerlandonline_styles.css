@@ -356,3 +356,12 @@ a:hover {color: #eb7125;}
 	color: #eb7125;
 }
 /********* Cart/Checkout CSS End **********/
+
+/* Tablet landscape view */
+@media only screen and (min-width:641px) and (max-width:959px) {}
+
+/* Tablet portrait view */
+@media only screen and (min-width:480px) and (max-width:640px) {}
+
+/* Mobile view */
+@media only screen and (max-width: 479px) {}
