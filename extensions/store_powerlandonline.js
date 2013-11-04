@@ -112,7 +112,12 @@ var store_powerlandonline = function() {
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
 					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);	 
+					 }]);	
+
+				$('.ddMenuBtn').on('click',function(event){
+					app.ext.store_powerlandonline.a.showDropDown($(this).parent());
+					event.stopPropagation();
+				});	 
 				return r;
 				},
 			onError : function()	{
@@ -130,6 +135,47 @@ var store_powerlandonline = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+			showDropDown : function ($container) {
+				//app.u.dump('showing');
+				//console.log($container.data('timeoutNoShow'));
+				if(!$container.data('timeoutNoShow') || $container.data('timeoutNoShow')=== "false") {
+					var $dropdown = $(".dropdown", $container);
+					var height = 0;
+					$dropdown.show();
+					if($dropdown.data('width')){
+						$dropdown.css("width",$dropdown.data('width'));
+					}
+					
+					if($dropdown.data('height')){
+						height = $dropdown.data('height');
+					} else{
+						$dropdown.children().each(function(){
+							height += $(this).outerHeight();
+						});
+					}
+					if($container.data('timeout') && $container.data('timeout')!== "false"){
+						clearTimeout($container.data('timeout'));
+						$container.data('timeout','false');
+					}
+					$dropdown.stop().animate({"height":height+"px"}, 500);
+					
+					$('html, .ddMenuBtn').on('click.dropdown',function(){
+						//hide the dropdown
+						app.u.dump('hiding');
+						$(".dropdown", $container).stop().animate({"height":"0px"}, 500);
+						if($container.data('timeout') && $container.data('timeout')!== "false"){
+							$container.data('timeout')
+							$container.data('timeout','false');
+						}
+						$container.data('timeout',setTimeout(function(){$(".dropdown", $container).hide();},500));
+						
+						//clean up after ourselves
+						$('html, .ddMenuBtn').off('click.dropdown')
+					});
+					return true;
+				}
+				return false;
+			}
 
 			}, //Actions
 

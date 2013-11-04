@@ -430,4 +430,42 @@ a:hover {color: #eb7125;}
 }
 
 /* Mobile view */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+.displayNoneMobile{display:none;}
+.displayBlockMobile {display:block;}
+
+#appPreView {width: 290px;}
+#appPreViewLogo {padding: 5px 45px;}
+
+#appView {max-width: 290px;}
+
+.header {height: 250px;}
+#logo{margin: 15px 6px;}
+.cartSection {width: 125px; text-align: right; margin: 5px 10px 0px 0px;}
+.cartSection h5 {margin-top:10px;}
+.searchBarSection {top: 100px; width: 290px; height: 85px;}
+.searchSection {margin: 0 auto; width: 225px;}
+.productSearchForm {width: 215px; float: none;}
+.productSearchKeyword {width: 175px;}
+.headerNav {float: left; padding: 0px;}
+
+.ddMenu {position: relative; display: block; width:280px; margin: 5px auto 0px; top: 93px;}
+.ddMenuBtn{margin:0px; padding:14px 0px; outline:medium none; overflow:hidden; border:1px solid #939598; background:#D7D9DB; font-size:20px; color:#000000; text-align:center; border-radius: 4px;}
+.dropdown { background: #D7D9DB; position: absolute; z-index:999; top:51px; left: 0px; height: 0px; border: 1px solid #939598; border-top: none; border-radius: 0px 0px 7px 7px;}
+.dropdown > div { border-top: 1px solid #939598; font-size: 15px; line-height: 34px; text-align: center;}
+
+.productList {width: 173px; margin: 0 auto;}
+.quickViewSection {display: none;}
+.mainColumn {width: 205px;}
+.textContentArea p {word-wrap: break-word;}
+.contactEmail {width: 133px;}
+.sideline {padding: 10px 25px 10px 5px;}
+
+.productPage {width: 240px; margin: 0 auto;}
+.imageContainer {padding: 0px; float: none; width: 100%;}
+.prodBigImage {margin: 0 auto;}
+.prodViewerContainer .prodThumbs div {margin: 4px;}
+.prodSummaryContainer {width: 100%; padding: 0px 10px; float: none; clear:both;}
+
+.copyrightSection {width: 240px; margin: 0 auto;}
+}

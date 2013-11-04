@@ -138,6 +138,7 @@ ANIMATION TESTING
 				</a>
 				<h5>Toll Free: (888) 807-6660</h5>
 			</div>
+			<div class="clear"></div>
 		</div>
 		<div class="searchBarSection">
 			<div class="searchSection">
@@ -153,10 +154,22 @@ ANIMATION TESTING
 				<li><a href="#" onClick="return showContent('customer',{'show':'myaccount'});">Login</a></li> |
 				<li id="addThisContainer"><a>Share This Page</a></li>
 			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="pointer ddMenu">
+			<div class="ddMenuBtn">Categories</div>
+			<div class="dropdown down displayNone" data-width="278px">
+				<div onClick="return showContent('category',{'navcat':'.power_land.diesel_generator'});">Diesel Generator</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.gas_generator'});">Gas Generator</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.lpg_generator'});">LPG NG Tri Fuel Generator</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.snow_blower'});">Snow Blower</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.trowel'});">Power Tools</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.welder'});">Gas Electric Welder</div>
+			</div>
 		</div>
 	</div>
 <div class="mainBody">
-	<div class="sideBar">
+	<div class="sideBar displayNoneMobile">
 		<div class="sideBarCategories">
 			<h5>Categories</h5>
 			<ul id="tier1categories"></ul>
@@ -267,7 +280,7 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
-	<div id="slideshowContainer" class="clearfix marginBottom displayNoneLandscape displayNonePortrait">
+	<div id="slideshowContainer" class="clearfix marginBottom displayNoneLandscape displayNonePortrait displayNoneMobile">
 		<div id="slideshowNav"></div>
 		<ul id="slideshow">
 			<li><a href="#"><img src='images/pl_hp_garage_1b.jpg' /></a></li>
@@ -530,15 +543,15 @@ this will likely become more flexible in the future. ###
 <div class='prodViewerContainer'>
 
 	<div class='imageContainer'>
-	<h1 class="prodName marginBottom displayNone displayBlockLandscape displayBlockPortrait" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+	<h1 class="prodName marginBottom displayNone displayBlockLandscape displayBlockPortrait displayBlockMobile" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-	<img class="displayNonePortrait prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
-	<img class="dispayNone displayBlockPortrait prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='225' height='225' />
+	<img class="displayNonePortrait displayNoneMobile prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
+	<img class="dispayNone displayBlockPortrait displayBlockMobile prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='225' height='225' />
 
 </div>
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNonePortrait'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNonePortrait displayNoneMobile'>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image2); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image3); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='100' height='100' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image4); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
@@ -550,7 +563,7 @@ this will likely become more flexible in the future. ###
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"10"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image10); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL;' alt='' width='100' height='100' /></div>
 	</div>
 
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNone displayBlockPortrait'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNone displayBlockPortrait displayBlockMobile'>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image2); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='50' height='50' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image3); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='50' height='50' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image4); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='50' height='50' /></div>
@@ -565,7 +578,7 @@ this will likely become more flexible in the future. ###
 	</div>
 
 	<div class='prodSummaryContainer marginBottom no_underline'>
-	<h1 class="prodName marginBottom displayNoneLandscape displayNonePortrait" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+	<h1 class="prodName marginBottom displayNoneLandscape displayNonePortrait displayNoneMobile" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
 	<hgroup class='marginBottom'>
 		<div class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></div>
@@ -809,7 +822,7 @@ if you change these, you should move them above this comment so that when you (o
 		<div id='aboutArticle' class='textContentArea templateContent article'>
 			<h1 class="companyPageHeader">About Powerland Power Equipment</h1>
 			<p>Powerland Power Equipment is the factory outlet of Powerland brand, which manufactures engineering and construction equipment. We provide high quality electric generators which specialize in using gasoline, propane, natural gas, or diesel as a fuel source. In addition, we sell tools for construction site work including water pumps, concrete cutters, power trowels, tamper rammers, and plate compactors. We also have products like snow blowers and transfer switch kits for generators. All of our prices are reasonable to ensure customer satisfaction. We strongly respect customer loyalty and strive to maintain any relationships that we have developed.</p>
-			<p>Email: <a href="mailto:sales@powerlandonline.com" title="Email Us">Sales@PowerlandOnline.com</a></p>
+			<p class="contactEmail">Email: <a href="mailto:sales@powerlandonline.com" title="Email Us">Sales@PowerlandOnline.com</a></p>
 			<h3>Office Address:</h3>
 			<p>14401 Monte Vista Ave</p>
 			<p>Chino, CA 91710</p>
@@ -819,7 +832,7 @@ if you change these, you should move them above this comment so that when you (o
 
 		<div id='contactArticle' class='displayNone textContentArea templateContent'>
 			<h1 class="companyPageHeader">Contact Information</h1>
-			<p>Email: <a href="mailto:sales@powerlandonline.com" title="Email Us">Sales@PowerlandOnline.com</a></p>
+			<p class="contactEmail">Email: <a href="mailto:sales@powerlandonline.com" title="Email Us">Sales@PowerlandOnline.com</a></p>
 			<p>Toll Free:(888) 807 - 6660</p>
 			<h3>Office Address:</h3>
 			<p>14401 Monte Vista Ave</p>
