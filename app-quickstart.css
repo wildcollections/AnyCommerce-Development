@@ -250,11 +250,11 @@ PRODUCT DETAIL PAGE (productTemplate)
 .breadAndAddThisContainer	{margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #b6b6b6;}
 
 /* primary image and thumbnails */
-.imageContainer	{width:10%; padding-right:24px;}
+.imageContainer	{width:50%; float:left; padding-right:24px;}
 .prodViewerContainer .prodThumbs div	{float:left; margin:12px 12px 0 0;}
 
 
-.prodSummaryContainer	{width:90%;}
+.prodSummaryContainer	{width:46%; float:right;}
 
 
 .tabbedProductContent .prodReviewsTab	{display:block;} /* reviews tab always shows up */

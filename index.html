@@ -524,10 +524,10 @@ this will likely become more flexible in the future. ###
 <div id='productTemplate' class='productPage templateContent'>
 
 <ul class='clearfix noPadOrMargin fluidList breadcrumb' data-bind='var: session(session.recentCategories.0); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
-<table class='prodViewerContainer'>
-<tr>
-	<td class='imageContainer'>
+<div class='prodViewerContainer'>
 
+	<div class='imageContainer'>
+	<h1 class="prodName marginBottom displayNone displayBlockLandscape" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
@@ -547,10 +547,10 @@ this will likely become more flexible in the future. ###
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"10"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image10); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL;' alt='' width='100' height='100' /></div>
 	</div>
 
-	</td>
+	</div>
 
-	<td class='prodSummaryContainer marginBottom no_underline'>
-	<h1 class="prodName marginBottom" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+	<div class='prodSummaryContainer marginBottom no_underline'>
+	<h1 class="prodName marginBottom displayNoneLandscape" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
 	<hgroup class='marginBottom'>
 		<div class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></div>
@@ -601,16 +601,13 @@ this will likely become more flexible in the future. ###
 
 	</menu>
 
-	</td>
-</tr>
-<tr>
-	<td colspan='2' class="tabbedProductContentTD">
+	</div>
 <!--
 the tabs are built in an onComplete.  ID's are added based on sku AND index, so the index (order) of the tabs MUST match the order of the tabContent divs
 or the tab clicked won't open the right content.
 It's done this way because ID's hard coded into template are bad mojo (templates are recycled) and because using data-binds to add id's caused some serious issues
 -->
-<div class='prodTabs tabbedProductContent marginBottom'>
+<div class='prodTabs clear tabbedProductContent marginBottom'>
 
 	<ul class='tabs'>
 		<li class='prodDescTab'><a href='#prodDesc'>Description</a></li>
@@ -646,16 +643,9 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 	<div class='tabContent' data-anytab-content='prodVideo'>
 		<div data-bind='var: product(youtube:videoid); format:youtubeVideo;'></div>
 	</div>
-
-
-
-
-
 </div>
 
-	</td>
-</tr>
-</table>
+</div>
 <div class='prodlistRelatedContainer'>
 	<div class="featProdHeader displayNone" data-bind='var: product(zoovy:accessory_products); format:showIfSet;'>Accessories</div>
 	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; withInventory:1; withVariations:1;"></ul>
