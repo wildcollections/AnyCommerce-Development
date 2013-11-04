@@ -140,10 +140,12 @@ ANIMATION TESTING
 			</div>
 		</div>
 		<div class="searchBarSection">
-			<form name='headerSearchFrm' action='#' class='productSearchForm' method="get" id="searchFunc">
-				<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault" placeholder="Search" id="searchBar"/>
-				<input class="search searchBtn pointer" type="submit" value="Go" id="searchButton" />
-			</form>
+			<div class="searchSection">
+				<form name='headerSearchFrm' action='#' class='productSearchForm' method="get" id="searchFunc">
+					<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault" placeholder="Search" id="searchBar"/>
+					<input class="search searchBtn pointer" type="submit" value="Go" id="searchButton" />
+				</form>
+			</div>
 			<ul class="headerNav">
 				<li><a href="#" onClick="showContent('homepage');">Home</a></li> |
 				<li><a href="#" onClick="return showContent('company',{'show':'contact'});">Contact</a></li> |
@@ -265,7 +267,7 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
-	<div id="slideshowContainer" class="clearfix marginBottom displayNoneLandscape">
+	<div id="slideshowContainer" class="clearfix marginBottom displayNoneLandscape displayNonePortrait">
 		<div id="slideshowNav"></div>
 		<ul id="slideshow">
 			<li><a href="#"><img src='images/pl_hp_garage_1b.jpg' /></a></li>
@@ -385,6 +387,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
 		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='55' height='55' />
 		<h6 class="recentViewProdName" data-bind='var: product(zoovy:prod_name); format:text;'></h6>
+		<div class="clear"></div>
 	</div>
 </li>
 
@@ -527,15 +530,15 @@ this will likely become more flexible in the future. ###
 <div class='prodViewerContainer'>
 
 	<div class='imageContainer'>
-	<h1 class="prodName marginBottom displayNone displayBlockLandscape" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+	<h1 class="prodName marginBottom displayNone displayBlockLandscape displayBlockPortrait" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-	<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
+	<img class="displayNonePortrait prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
+	<img class="dispayNone displayBlockPortrait prodBigImage" src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='225' height='225' />
 
 </div>
-
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNonePortrait'>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image2); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image3); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='100' height='100' /></div>
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image4); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
@@ -547,10 +550,22 @@ this will likely become more flexible in the future. ###
 		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"10"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image10); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL;' alt='' width='100' height='100' /></div>
 	</div>
 
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs displayNone displayBlockPortrait'>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image2); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image3); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image4); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"5"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image5); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image5); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"6"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image6); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image6); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"7"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image7); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image7); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"8"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image8); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image8); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"9"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image9); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image9); format:imageURL;' alt='' width='50' height='50' /></div>
+		<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"10"});' class='pointer displayNone' data-bind='var: product(zoovy:prod_image10); format:showIfSet;'><img src='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL;' alt='' width='50' height='50' /></div>
+	</div>
+
 	</div>
 
 	<div class='prodSummaryContainer marginBottom no_underline'>
-	<h1 class="prodName marginBottom displayNoneLandscape" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+	<h1 class="prodName marginBottom displayNoneLandscape displayNonePortrait" data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
 	<hgroup class='marginBottom'>
 		<div class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></div>
