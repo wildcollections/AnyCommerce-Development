@@ -265,7 +265,7 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
-	<div id="slideshowContainer" class="clearfix marginBottom">
+	<div id="slideshowContainer" class="clearfix marginBottom displayNoneLandscape">
 		<div id="slideshowNav"></div>
 		<ul id="slideshow">
 			<li><a href="#"><img src='images/pl_hp_garage_1b.jpg' /></a></li>
@@ -360,8 +360,9 @@ the loadingBG class is removed (must be that classname) when the template is tra
 remember to NOT put the button inside the 'onclick' container or two events will occur onclick.
 -->
 <li id='productListTemplate' class='loadingBG alignCenter ' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
-
-	<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
+	<div class="quickViewSection">
+		<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
+	</div>
 
 	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
 		<div class='prodThumbContainer prodListImage' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
@@ -837,8 +838,8 @@ if you change these, you should move them above this comment so that when you (o
 
 
 
-		<div id='faqArticle' class='displayNone textContentArea'>
-			<h1>Frequently Asked Questions</h1>
+		<div id='faqArticle' class='displayNone textContentArea templateContent'>
+			<h1 class="companyPageHeader">Frequently Asked Questions</h1>
 			<div id='faqContent' class='loadingBG ui-accordion ui-widget ui-helper-reset ui-accordion-icons appAccordianesque'></div>
 		</div>
 

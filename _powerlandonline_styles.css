@@ -358,7 +358,27 @@ a:hover {color: #eb7125;}
 /********* Cart/Checkout CSS End **********/
 
 /* Tablet landscape view */
-@media only screen and (min-width:641px) and (max-width:959px) {}
+@media only screen and (min-width:641px) and (max-width:959px) {
+.displayNoneLandscape {display:none;}
+
+#appView { max-width: 610px; }
+
+.searchBarSection {width: 610px;}
+.productSearchForm {width: 152px;}
+.productSearchKeyword {width: 115px;}
+
+.sideBar {max-width: 160px;}
+.sideBarCategories ul {padding: 10px 0px 20px 30px;}
+.sideBarFormFrm {width: 136px;}
+#recentlyViewedItemsContainer .productList{width: 162px;}
+.productList li.recentViewList {width:153px;}
+.recentViewProdName {width:95px;}
+
+.container {width: 449px;}
+.productList {width: 344px; margin: 0 auto;}
+.quickViewSection {display: none;}
+.mainColumn {width: 332px;}
+}
 
 /* Tablet portrait view */
 @media only screen and (min-width:480px) and (max-width:640px) {}
