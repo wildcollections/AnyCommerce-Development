@@ -360,12 +360,14 @@ a:hover {color: #eb7125;}
 /* Tablet landscape view */
 @media only screen and (min-width:641px) and (max-width:959px) {
 .displayNoneLandscape {display:none;}
+.displayBlockLandscape {display:block;}
 
 #appView { max-width: 610px; }
 
 .searchBarSection {width: 610px;}
 .productSearchForm {width: 152px;}
 .productSearchKeyword {width: 115px;}
+.headerNav li {padding: 0px 6px;}
 
 .sideBar {max-width: 160px;}
 .sideBarCategories ul {padding: 10px 0px 20px 30px;}
@@ -378,6 +380,10 @@ a:hover {color: #eb7125;}
 .productList {width: 344px; margin: 0 auto;}
 .quickViewSection {display: none;}
 .mainColumn {width: 332px;}
+
+.prodViewerContainer {margin: 0 auto; max-width: 345px;}
+.imageContainer {padding: 0px; float: none; width: 100%;}
+.prodSummaryContainer {width: 100%; padding: 0px 10px; float: none; clear:both;}
 }
 
 /* Tablet portrait view */
