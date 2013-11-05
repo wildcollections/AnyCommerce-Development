@@ -551,33 +551,51 @@ this will likely become more flexible in the future. ###
 			</a>
 			<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='additionalImageSection heightLimited prodThumbs prosmallpic'>
 				<div class="additionalImageInnerSection">
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image2); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image3); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image4); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image5); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image5); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image6); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image6); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image7); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image7); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image8); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image8); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image9); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image9); format:imageURL;' width='100' height='100' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image10); format:imageURL;' width='100' height='100' />
-					</a>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image2); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image2); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image3); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image3); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image4); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image4); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image5); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image5); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image5); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image6); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image6); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image6); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image7); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image7); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image7); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image8); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image8); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image8); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image9); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image9); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image9); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image10); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL2Href; extension:tools_magnificpopup; h:100; w:100;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image10); format:imageURL;' width='100' height='100' />
+						</a>
+					</div>
 					<div class="clear"></div>
 				</div>
 			</div>
@@ -589,33 +607,51 @@ this will likely become more flexible in the future. ###
 			</a>
 			<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='additionalImageSection heightLimited prodThumbs prosmallpic'>
 				<div class="additionalImageInnerSection">
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image2); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image3); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image4); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image5); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image5); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image6); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image6); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image7); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image7); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image8); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image8); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image9); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image9); format:imageURL;' width='50' height='50' />
-					</a>
-					<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
-						<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image10); format:imageURL;' width='50' height='50' />
-					</a>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image2); format:showIfSet;'>
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image2); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image3); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image3); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image4); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image4); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image5); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image5); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image5); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image6); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image6); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image6); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image7); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image7); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image7); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image8); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image8); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image8); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image9); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image9); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image9); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
+					<div class="displayNone" data-bind='var: product(zoovy:prod_image10); format:showIfSet;'>	
+						<a class="imgThumbContainer" href='blank.gif' data-bind='var: product(zoovy:prod_image10); format:imageURL2Href; extension:tools_magnificpopup; h:50; w:50;' data-gallery="gallery"  >
+							<img src='blank.gif' alt='' data-bind='var: product(zoovy:prod_image10); format:imageURL;' width='50' height='50' />
+						</a>
+					</div>
 					<div class="clear"></div>
 				</div>
 			</div>
