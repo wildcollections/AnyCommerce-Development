@@ -2372,6 +2372,7 @@ elasticsearch.size = 50;
 							$cart.anymessage({'message':rd});
 							}
 						else	{
+							$cart.intervaledEmpty();
 							$cart.anycontent({'templateID':infoObj.templateID,'datapointer':'cartDetail'});
 							}
 						}},'mutable');
