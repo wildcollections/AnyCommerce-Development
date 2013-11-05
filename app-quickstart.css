@@ -251,7 +251,6 @@ PRODUCT DETAIL PAGE (productTemplate)
 
 /* primary image and thumbnails */
 .imageContainer	{width:50%; float:left; padding-right:24px;}
-.prodViewerContainer .prodThumbs div	{float:left; margin:12px 12px 0 0;}
 
 
 .prodSummaryContainer	{width:46%; float:right;}
