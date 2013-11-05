@@ -40,6 +40,13 @@ var tools_magnificpopup = function() {
 						type: 'image',
 						gallery: {enabled:true}
 					});
+					
+					var $imgContainer = $('[data-magnificpopup=imgContainerResponsive]', $context);
+					$imgContainer.magnificPopup({
+						delegate: 'a[data-magnificpopup=imgLink]',
+						type: 'image',
+						gallery: {enabled:true}
+					});
 				}]);
 				
 				r = true;
