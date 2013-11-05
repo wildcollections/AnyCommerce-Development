@@ -345,6 +345,8 @@ a:hover {color: #eb7125;}
 	font-size: 16px;
 	padding: 7px 15px;
 }
+.reviewBtn {width: 110px; height: 30px;}
+.reviewLineItem blockquote{margin: 0px;}
 /********* ProductTemplate CSS End **********/
 
 
@@ -387,6 +389,7 @@ a:hover {color: #eb7125;}
 .prodViewerContainer {margin: 0 auto; max-width: 345px;}
 .imageContainer {padding: 0px; float: none; width: 100%;}
 .prodSummaryContainer {width: 100%; padding: 0px 10px; float: none; clear:both;}
+.prodReviewInfo {margin:0px 12px 8px 0px; float: none;}
 }
 
 /* Tablet portrait view */
@@ -429,6 +432,7 @@ a:hover {color: #eb7125;}
 .prodBigImage {margin: 0 auto;}
 .prodViewerContainer .prodThumbs a {margin: 4px;}
 .prodSummaryContainer {width: 100%; padding: 0px 10px; float: none; clear:both;}
+.prodReviewInfo {margin:0px 12px 8px 0px; float: none;}
 }
 
 /* Mobile view */
@@ -468,6 +472,7 @@ a:hover {color: #eb7125;}
 .prodBigImage {margin: 0 auto;}
 .prodViewerContainer .prodThumbs a {margin: 4px;}
 .prodSummaryContainer {width: 100%; padding: 0px 10px; float: none; clear:both;}
+.prodReviewInfo {margin:0px 12px 8px 0px; float: none;}
 
 .copyrightSection {width: 240px; margin: 0 auto;}
 }
