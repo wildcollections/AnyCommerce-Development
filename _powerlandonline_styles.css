@@ -361,6 +361,14 @@ a:hover {color: #eb7125;}
 	color: #eb7125;
 }
 /********* Cart/Checkout CSS End **********/
+.footer .newsletterSection {background: #D7D9DB; padding: 9px;}
+.foooterNewsletter{width: 170px; margin: 0 auto;}
+#footerSignUpButton {    
+	background: none repeat scroll 0 0 #EB7125;
+    border: 1px solid #666666;
+	color:#ffffff;
+    padding: 3px;
+}
 
 /* Tablet landscape view */
 @media only screen and (min-width:641px) and (max-width:959px) {

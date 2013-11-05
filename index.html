@@ -224,6 +224,22 @@ ANIMATION TESTING
 </div>
 
 <div class="footer clearfix">
+	<div class="newsletterSection displayNone displayBlockMobile">
+		<div class="foooterNewsletter">
+			<h4>Newsletter</h4>
+			<form action='#' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
+				<div class='marginRight'>
+					<input type='text'  maxlength='50' size='30' name='fullname' class='footerFormFrm' placeholder='Name' />
+				</div>
+				<div class='marginRight marginTop'>
+					<input type='email'  maxlength='50' size='30' name='login' class='footerFormFrm' placeholder='Email' />
+				</div>
+				<div class='alignRight marginTop'>
+					<input type='submit' value='Submit' id='footerSignUpButton'>
+				</div>
+			</form>
+		</div>
+	</div>
 	<ul class="footerNav">
 		<li><a href="#" onClick="return showContent('company',{'show':'about'});">About Us</a></li> |
 		<li><a href="#" onClick="return showContent('company',{'show':'faq'});">FAQ</a></li> |
