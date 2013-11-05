@@ -409,9 +409,13 @@ remember to NOT put the button inside the 'onclick' container or two events will
 		<div class="prodListPrice" data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></div>
 	</div>
 	
-	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'modal'}); return false;">
-		<input type='hidden' name='qty' value='1' />
-		<button class="prodListButton" data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>More Details</button>
+	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix displayNoneLandscape displayNonePortrait displayNoneMobile' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'modal'}); return false;">
+	  <input type='hidden' name='qty' value='1' />
+	  <button class="prodListButton" data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>More Details</button>
+	</form>
+	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix displayNone displayBlockLandscape displayBlockPortrait displayBlockMobile' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'inline'}); return false;">
+	  <input type='hidden' name='qty' value='1' />
+	  <button class="prodListButton" data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>More Details</button>
 	</form>
 	
 </li>
