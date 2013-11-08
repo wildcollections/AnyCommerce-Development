@@ -163,9 +163,9 @@ ANIMATION TESTING
 		<div class="pointer ddMenu">
 			<div class="ddMenuBtn">Categories</div>
 			<div class="dropdown down displayNone" data-width="278px">
-				<div onClick="return showContent('category',{'navcat':'.power_land.diesel_generator'});">Diesel Generator</div>
 				<div onClick="return showContent('category',{'navcat':'.power_land.gas_generator'});">Gas Generator</div>
 				<div onClick="return showContent('category',{'navcat':'.power_land.lpg_generator'});">LPG NG Tri Fuel Generator</div>
+				<div onClick="return showContent('category',{'navcat':'.power_land.diesel_generator'});">Diesel Generator</div>
 				<div onClick="return showContent('category',{'navcat':'.power_land.snow_blower'});">Snow Blower</div>
 				<div onClick="return showContent('category',{'navcat':'.power_land.trowel'});">Power Tools</div>
 				<div onClick="return showContent('category',{'navcat':'.power_land.welder'});">Gas Electric Welder</div>
@@ -176,7 +176,14 @@ ANIMATION TESTING
 	<div class="sideBar displayNoneMobile">
 		<div class="sideBarCategories">
 			<h5>Categories</h5>
-			<ul id="tier1categories"></ul>
+			<ul>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.gas_generator'});">Gas Generator</a></li>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.lpg_generator'});">LPG NG Tri Fuel Generator</a></li>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.diesel_generator'});">Diesel Generator</a></li>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.snow_blower'});">Snow Blower</a></li>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.trowel'});">Power Tools</a></li>
+				<li><a onClick="return showContent('category',{'navcat':'.power_land.welder'});">Gas Electric Welder</a></li>
+			</ul>
 		</div>
 		<div class="newsletterSection">
 			<h5>Newsletter</h5>
