@@ -707,8 +707,7 @@ this will likely become more flexible in the future. ###
 		<tbody data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></tbody>
 	</table>
 
-
-	<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
+	<div class="latency ">Free Shipping</div>
 	<div data-app-role='timeInTransit' class='displayNone'></div>
 
 	<form class="displayNoneLandscape displayNonePortrait displayNoneMobile" data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
