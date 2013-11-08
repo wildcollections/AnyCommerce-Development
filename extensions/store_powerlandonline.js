@@ -125,6 +125,24 @@ var store_powerlandonline = function() {
 //you may or may not need it.
 				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
+			},
+			
+		startExtension: {
+			onSuccess : function()	{
+				var temp = JSON.parse(app.storageFunctions.readLocal('recentlyViewedItems'));
+				var expired = false;
+				if(temp && !expired){
+					app.ext.myRIA.vars.session.recentlyViewedItems = temp;
+					app.u.dump(app.ext.myRIA.vars.session.recentlyViewedItems);
+					var $container = $('#recentlyViewedItemsContainer');
+					$container.show();
+					$("ul",$container).empty(); //empty product list
+					$container.anycontent({data:app.ext.myRIA.vars.session}); //build product list
+				}
+			},
+			
+			onError : function()	{
+			}
 			}
 		}, //callbacks
 
@@ -192,6 +210,12 @@ var store_powerlandonline = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
+			cacheRecentlyViewedItems: function ($container){
+				app.u.dump ('Caching product to recently viewed');
+				app.storageFunctions.writeLocal('recentlyViewedItems', app.ext.myRIA.vars.session.recentlyViewedItems);
+				// Add timestamp
+			}
+			
 			}, //u [utilities]
 
 //app-events are added to an element through data-app-event="extensionName|functionName"

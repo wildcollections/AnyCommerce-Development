@@ -917,6 +917,10 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 							app.ext.myRIA.vars.session.recentlyViewedItems.splice(0, 0, app.ext.myRIA.vars.session.recentlyViewedItems.splice($.inArray(infoObj.pid, app.ext.myRIA.vars.session.recentlyViewedItems), 1)[0]);
 							}
 						infoObj.parentID = app.ext.myRIA.u.showProd(infoObj);
+// ** START POWERLANDONLINE CUSTOMIZATION
+						app.ext.store_powerlandonline.u.cacheRecentlyViewedItems();
+						app.u.dump ('Adding recently viewed items to cache');
+// ** END POWERLANDONLINE CUSTOMIZATION						
 						break;
 	
 					case 'homepage':
