@@ -20,6 +20,9 @@
     font-weight: bold;
     padding: 8px;
 }
+.ui-button.ui-state-default.ui-button-text-only:hover{
+	color: #EB7125;
+}
 .redirectModal .ui-dialog-titlebar-close,
 .redirectModal .ui-dialog-titlebar {
 	display: none;
