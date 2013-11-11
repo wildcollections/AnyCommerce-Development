@@ -22,6 +22,7 @@ a:hover {color: #eb7125;}
 }
 .breadcrumb li a {font-weight: bold;}
 .breadcrumb li:last-child a:hover{color: #eb7125;}
+.categoryDesc {font-size: 12px;}
 /********* General CSS End **********/
 
 /********* App Preview CSS Start ********/
