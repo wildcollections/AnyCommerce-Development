@@ -137,7 +137,6 @@ a:hover {color: #eb7125;}
     padding: 3px;
 }
 .recentViewSection {
-	min-height: 100px;
 	border-bottom: 1px solid #D7D9DB;
 }
 .recentViewHeader {background: #D7D9DB;}

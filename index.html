@@ -199,12 +199,6 @@ ANIMATION TESTING
 				</div>
 			</form>
 		</div>
-		<div class="recentViewSection">
-			<h5 class="recentViewHeader">RECENTLY VIEWED</h5>
-			<div id='recentlyViewedItemsContainer' class='displayNone'>
-				<ul data-bind="var: session(recentlyViewedItems); format: productList; extension: store_prodlist; loadsTemplate: productListTemplateRecentlyViewed; hide_summary:1; hide_pagination:1; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-			</div>
-		</div>
 		<div class="sideBarImages">
 			<img src="images/VISA.gif"/>
 			<img src="images/MC.gif"/>
@@ -216,6 +210,12 @@ ANIMATION TESTING
 			<a href="http://blog.powerlandonline.com/" target="_blank">
 				<img class="visitBlogImg" src="images/blog-125x45.png"/>
 			</a>
+		</div>
+		<div class="recentViewSection">
+			<h5 class="recentViewHeader">RECENTLY VIEWED</h5>
+			<div id='recentlyViewedItemsContainer' class='displayNone'>
+				<ul data-bind="var: session(recentlyViewedItems); format: productList; extension: store_prodlist; loadsTemplate: productListTemplateRecentlyViewed; hide_summary:1; hide_pagination:1; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+			</div>
 		</div>
 	</div>
 
