@@ -351,6 +351,8 @@ a:hover {color: #eb7125;}
 
 
 /********* Cart/Checkout CSS Start **********/
+.ui-button.ui-button-text-only.ui-state-default.ui-corner-all.checkoutButton {border:0 none;}
+#paypalECButton {padding-top: 2px;}
 .placeOrderButton.ui-state-highlight.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
 	font-size: 18px;
     font-weight: bold;
