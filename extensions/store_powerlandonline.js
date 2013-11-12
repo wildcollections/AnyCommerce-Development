@@ -130,8 +130,14 @@ var store_powerlandonline = function() {
 		startExtension: {
 			onSuccess : function()	{
 				var temp = JSON.parse(app.storageFunctions.readLocal('recentlyViewedItems'));
-				var expired = false;
-				if(temp && !expired){
+				var d = new Date();
+				if(d - temp.timestamp > 90*24*60*60*1000) {
+					var expired = true;
+				}
+				else {
+					var expired = false;
+				}
+				if(temp.items && !expired){
 					app.ext.myRIA.vars.session.recentlyViewedItems = temp;
 					app.u.dump(app.ext.myRIA.vars.session.recentlyViewedItems);
 					var $container = $('#recentlyViewedItemsContainer');
@@ -212,7 +218,8 @@ var store_powerlandonline = function() {
 		u : {
 			cacheRecentlyViewedItems: function ($container){
 				app.u.dump ('Caching product to recently viewed');
-				app.storageFunctions.writeLocal('recentlyViewedItems', app.ext.myRIA.vars.session.recentlyViewedItems);
+				var d = new Date();
+				app.storageFunctions.writeLocal('recentlyViewedItems', {"items":app.ext.myRIA.vars.session.recentlyViewedItems,"timestamp":d});
 				// Add timestamp
 			}
 			
