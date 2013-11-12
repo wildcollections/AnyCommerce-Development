@@ -61,7 +61,7 @@ var tools_magnificpopup = function() {
 		u : {
 			callMagnificPopup : function($context, attempts){
 				attempts = attempts || 0; 
-				if(typeof magnificpopup !== "undefined"){
+				if(typeof $.fn.magnificPopup !== "undefined"){
 					
 					var $imgContainer = $('[data-magnificpopup=imgContainer]', $context);
 					$imgContainer.magnificPopup({
@@ -70,7 +70,7 @@ var tools_magnificpopup = function() {
 						gallery: {enabled:true}
 					});
 					
-					$imgContainer = $('[data-magnificpopup=imgContainerResponsive]', $context);
+					var $imgContainer = $('[data-magnificpopup=imgContainerResponsive]', $context);
 					$imgContainer.magnificPopup({
 						delegate: 'a[data-magnificpopup=imgLink]',
 						type: 'image',
