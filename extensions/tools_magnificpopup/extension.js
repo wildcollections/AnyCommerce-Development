@@ -33,20 +33,7 @@ var tools_magnificpopup = function() {
 				
 				app.rq.push (['templateFunction', 'productTemplate', 'onCompletes', function(P) {
 					var $context = $(app.u.jqSelector('#',P.parentID));
-					
-					var $imgContainer = $('[data-magnificpopup=imgContainer]', $context);
-					$imgContainer.magnificPopup({
-						delegate: 'a[data-magnificpopup=imgLink]',
-						type: 'image',
-						gallery: {enabled:true}
-					});
-					
-					var $imgContainer = $('[data-magnificpopup=imgContainerResponsive]', $context);
-					$imgContainer.magnificPopup({
-						delegate: 'a[data-magnificpopup=imgLink]',
-						type: 'image',
-						gallery: {enabled:true}
-					});
+					app.ext.tools_magnificpopup.u.callMagnificPopup($context);
 				}]);
 				
 				r = true;
@@ -72,6 +59,34 @@ var tools_magnificpopup = function() {
 			}, //renderFormats
 
 		u : {
+			callMagnificPopup : function($context, attempts){
+				attempts = attempts || 0; 
+				if(typeof magnificpopup !== "undefined"){
+					
+					var $imgContainer = $('[data-magnificpopup=imgContainer]', $context);
+					$imgContainer.magnificPopup({
+						delegate: 'a[data-magnificpopup=imgLink]',
+						type: 'image',
+						gallery: {enabled:true}
+					});
+					
+					$imgContainer = $('[data-magnificpopup=imgContainerResponsive]', $context);
+					$imgContainer.magnificPopup({
+						delegate: 'a[data-magnificpopup=imgLink]',
+						type: 'image',
+						gallery: {enabled:true}
+					});
+				}
+				else {
+					if(attempts > 40){
+						app.u.dump("Magnific Popup FAILED ");
+					}
+					else {
+						setTimeout(function(){app.ext.tools_magnificpopup.u.callMagnificPopup($context, attempts+1);}, 250);
+					}
+				}
+			}
+		
 			} //u [utilities]
 
 		} //r object.
