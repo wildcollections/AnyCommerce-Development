@@ -790,7 +790,7 @@ fallback is to just output the value.
 				if(!price)	{
 					buttonState = 'disable';
 					}
-				else if(inv && inv <= 0)	{buttonState = 'disable';}
+				else if(typeof inv !== "undefined" && (!inv || inv <= 0))	{buttonState = 'disable';}
 				else{}
 				
 //				app.u.dump(" -> inv: "+inv);
