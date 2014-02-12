@@ -56,10 +56,10 @@ var tools_ab_testing = function() {
 				//DETERMINE EXPERIMENTAL GROUPS
 				
 				//Grab any stored groupings for user consistency (a user will experience the same feature on returning to the app)
-				var cachedGroupings = app.storageFunctions.readLocal(app.ext.tools_ABtesting.vars.localStorageKey);
+				var cachedGroupings = app.storageFunctions.readLocal(app.ext.tools_ab_testing.vars.localStorageKey);
 				
 				//Delete the stored groupings.  They will be rewritten after any non-existing groupings are assigned.
-				localStorage.removeItem(app.ext.tools_ABtesting.vars.localStorageKey);
+				localStorage.removeItem(app.ext.tools_ab_testing.vars.localStorageKey);
 
 				//if no value was present in localstorage, the storageFunctions attempts to readCookie instead
 				//if no cookie is present, false is returned.  In this case start fresh.
@@ -68,20 +68,20 @@ var tools_ab_testing = function() {
 					}
 				
 				
-				for(var key in app.ext.tools_ABtesting.vars.groupings){
+				for(var key in app.ext.tools_ab_testing.vars.groupings){
 					//load cached groupings.  Replaces cached groupings that are outside current scope of the grouping
-					if(cachedGroupings[key] && cachedGroupings[key] < app.ext.tools_ABtesting.vars.groupings[key]){
-						app.ext.tools_ABtesting.vars.groupings[key] = cachedGroupings[key];
+					if(cachedGroupings[key] && cachedGroupings[key] < app.ext.tools_ab_testing.vars.groupings[key]){
+						app.ext.tools_ab_testing.vars.groupings[key] = cachedGroupings[key];
 						}
 					else{
 						//assign new grouping
-						app.ext.tools_ABtesting.vars.groupings[key] = Math.floor(Math.random()*app.ext.tools_ABtesting.vars.groupings[key]);
-						//app.u.dump(key+": "+app.ext.tools_ABtesting.vars.groupings[key]);
+						app.ext.tools_ab_testing.vars.groupings[key] = Math.floor(Math.random()*app.ext.tools_ab_testing.vars.groupings[key]);
+						//app.u.dump(key+": "+app.ext.tools_ab_testing.vars.groupings[key]);
 						}
 					}
 				
 				//re-write localStorage.  Previously cached vars that have no grouping in the current extension are tossed, to avoid localStorage buildup.
-				app.storageFunctions.writeLocal(app.ext.tools_ABtesting.vars.localStorageKey, app.ext.tools_ABtesting.vars.groupings);
+				app.storageFunctions.writeLocal(app.ext.tools_ab_testing.vars.localStorageKey, app.ext.tools_ab_testing.vars.groupings);
 				
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
@@ -90,7 +90,7 @@ var tools_ab_testing = function() {
 				return r;
 				},
 			onError : function()	{
-				app.u.dump('BEGIN tools_ABtesting.callbacks.init.onError');
+				app.u.dump('BEGIN tools_ab_testing.callbacks.init.onError');
 				}
 			}
 		}, //callbacks
@@ -107,7 +107,7 @@ var tools_ab_testing = function() {
 
 		renderFormats : {
 			exampleABRenderFormat: function($tag, data){
-				switch(app.ext.tools_ABtesting.vars.groupings.exampleFeature){
+				switch(app.ext.tools_ab_testing.vars.groupings.exampleFeature){
 					case 0:
 						$tag.text("A: "+data.value);
 						break;
