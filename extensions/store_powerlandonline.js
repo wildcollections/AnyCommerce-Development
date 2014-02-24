@@ -20,7 +20,7 @@
 
 //    !!! ->   TODO: replace 'username' in the line below with the merchants username.     <- !!!
 
-var store_powerlandonline = function() {
+var store_powerlandonline = function(_app) {
 	var theseTemplates = new Array('');
 	var r = {
 
@@ -34,88 +34,77 @@ var store_powerlandonline = function() {
 		init : {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
+				r = true;
 				
-				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(P) {
-					//run slideshow code
-					var $context = $(app.u.jqSelector('#',P.parentID));
-					if (!$('#slideshow', $context).hasClass('slideshowSet')){
-						$('#slideshow', $context).addClass('slideshowSet').cycle({
-							pause:  1,
-							pager:  '#slideshowNav'
-						});
-					}
-					else {
-						//already  rendered
-					}
-					}]);
+				
 					
-				app.rq.push(['templateFunction','productTemplate','onDeparts',function(P) {
+		/*		_app.rq.push(['templateFunction','productTemplate','onDeparts',function(P) {
 					var $container = $('#recentlyViewedItemsContainer');
 					$container.show();
 					$("ul",$container).empty(); //empty product list
-					$container.anycontent({data:app.ext.myRIA.vars.session}); //build product list
+					$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
 					}]);
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
-				r = true;
 				
-				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 					 
-				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 					 
-				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-				
-				app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 				
-				app.rq.push(['templateFunction','cartTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 }]);
+				
+				_app.rq.push(['templateFunction','cartTemplate','onCompletes',function(infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 					
-				app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);
 					 
-				app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj){
+				_app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj){
 					 $shareButtonContainer = $('#addThisContainer');
 					 $shareButtonContainer.empty();
 					 $shareButtonContainer.append('<a>Share This Page</a>');
 					 
-					 app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
 					 }]);	
 
+				*/
 				$('.ddMenuBtn').on('click',function(event){
-					app.ext.store_powerlandonline.a.showDropDown($(this).parent());
+					_app.ext.store_powerlandonline.a.showDropDown($(this).parent());
 					event.stopPropagation();
 				});	 
 				return r;
@@ -123,14 +112,14 @@ var store_powerlandonline = function() {
 			onError : function()	{
 //errors will get reported for this callback as part of the extensions loading.  This is here for extra error handling purposes.
 //you may or may not need it.
-				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				_app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
 			},
 			
 		startExtension: {
 			onSuccess : function()	{
-				var temp = JSON.parse(app.storageFunctions.readLocal('recentlyViewedItems'));
-				var oldTime = JSON.parse(app.storageFunctions.readLocal('timeStamp'));
+				var temp = _app.model.readLocal('recentlyViewedItems');
+				var oldTime =_app.model.readLocal('timeStamp');
 				var d = new Date().getTime();
 				if(d - oldTime > 90*24*60*60*1000) {
 					var expired = true;
@@ -139,13 +128,26 @@ var store_powerlandonline = function() {
 					var expired = false;
 				}
 				if(temp && !expired){
-					app.ext.myRIA.vars.session.recentlyViewedItems = temp;
-					app.u.dump(app.ext.myRIA.vars.session.recentlyViewedItems);
+					_app.ext.myRIA.vars.session.recentlyViewedItems = temp;
+					_app.u.dump(_app.ext.myRIA.vars.session.recentlyViewedItems);
 					var $container = $('#recentlyViewedItemsContainer');
 					$container.show();
 					$("ul",$container).empty(); //empty product list
-					$container.anycontent({data:app.ext.myRIA.vars.session}); //build product list
+					setTimeout(function(){
+						$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
+					},50);
 				}
+				_app.templates.homepageTemplate.on('complete.slideshow', function(event,$context, P){
+					if (!$('#slideshow', $context).hasClass('slideshowSet')){
+						$('#slideshow', $context).addClass('slideshowSet').cycle({
+								pause:  1,
+								pager:  '#slideshowNav'
+							});
+						}
+						else {
+							//already  rendered
+						}
+					});	
 			},
 			
 			onError : function()	{
@@ -186,7 +188,7 @@ var store_powerlandonline = function() {
 					
 					$('html, .ddMenuBtn').on('click.dropdown',function(){
 						//hide the dropdown
-						app.u.dump('hiding');
+						_app.u.dump('hiding');
 						$(".dropdown", $container).stop().animate({"height":"0px"}, 500);
 						if($container.data('timeout') && $container.data('timeout')!== "false"){
 							$container.data('timeout')
@@ -218,10 +220,10 @@ var store_powerlandonline = function() {
 //any functions that are recycled should be here.
 		u : {
 			cacheRecentlyViewedItems: function ($container){
-				app.u.dump ('Caching product to recently viewed');
+				_app.u.dump ('Caching product to recently viewed');
 				var d = new Date().getTime();
-				app.storageFunctions.writeLocal('recentlyViewedItems', app.ext.myRIA.vars.session.recentlyViewedItems);
-				app.storageFunctions.writeLocal('timeStamp',d);// Add timestamp
+				_app.model.writeLocal('recentlyViewedItems', _app.ext.myRIA.vars.session.recentlyViewedItems);
+				_app.model.writeLocal('timeStamp',d);// Add timestamp
 			}
 			
 			}, //u [utilities]
