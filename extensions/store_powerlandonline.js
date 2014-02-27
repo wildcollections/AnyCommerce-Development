@@ -36,73 +36,6 @@ var store_powerlandonline = function(_app) {
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				r = true;
 				
-				
-					
-		/*		_app.rq.push(['templateFunction','productTemplate','onDeparts',function(P) {
-					var $container = $('#recentlyViewedItemsContainer');
-					$container.show();
-					$("ul",$container).empty(); //empty product list
-					$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
-					}]);
-				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
-				
-				_app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-					 
-				_app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-					 
-				_app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-				
-				_app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-				
-				_app.rq.push(['templateFunction','cartTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-					
-				_app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);
-					 
-				_app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj){
-					 $shareButtonContainer = $('#addThisContainer');
-					 $shareButtonContainer.empty();
-					 $shareButtonContainer.append('<a>Share This Page</a>');
-					 
-					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
-					 }]);	
-
-				*/
 				$('.ddMenuBtn').on('click',function(event){
 					_app.ext.store_powerlandonline.a.showDropDown($(this).parent());
 					event.stopPropagation();
@@ -128,13 +61,13 @@ var store_powerlandonline = function(_app) {
 					var expired = false;
 				}
 				if(temp && !expired){
-					_app.ext.myRIA.vars.session.recentlyViewedItems = temp;
-					_app.u.dump(_app.ext.myRIA.vars.session.recentlyViewedItems);
+					_app.ext.quickstart.vars.session.recentlyViewedItems = temp;
+					_app.u.dump(_app.ext.quickstart.vars.session.recentlyViewedItems);
 					var $container = $('#recentlyViewedItemsContainer');
 					$container.show();
 					$("ul",$container).empty(); //empty product list
 					setTimeout(function(){
-						$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
+						$container.anycontent({data:_app.ext.quickstart.vars.session}); //build product list
 					},50);
 				}
 				_app.templates.homepageTemplate.on('complete.slideshow', function(event,$context, P){
@@ -147,7 +80,71 @@ var store_powerlandonline = function(_app) {
 						else {
 							//already  rendered
 						}
-					});	
+					});
+
+				_app.templates.productTemplate.on('depart.recentlyViewedItems', function(event,$context, P){
+					var $container = $('#recentlyViewedItemsContainer');
+					$container.show();
+					$("ul",$container).empty(); //empty product list
+					$container.anycontent({data:_app.ext.quickstart.vars.session}); //build product list
+					});
+				
+				_app.templates.homepageTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+				
+				_app.templates.categoryTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+				
+				_app.templates.productTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+					 
+				_app.templates.customerTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+					 
+				_app.templates.companyTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+					 
+				_app.templates.cartTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+					 
+				_app.templates.checkoutTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
+					 $shareButtonContainer = $('#addThisContainer');
+					 $shareButtonContainer.empty();
+					 $shareButtonContainer.append('<a>Share This Page</a>');
+					 
+					 _app.ext.partner_addthis.u.button($('a' ,$shareButtonContainer), infoObj);
+					 });
+					 
 			},
 			
 			onError : function()	{
@@ -222,7 +219,7 @@ var store_powerlandonline = function(_app) {
 			cacheRecentlyViewedItems: function ($container){
 				_app.u.dump ('Caching product to recently viewed');
 				var d = new Date().getTime();
-				_app.model.writeLocal('recentlyViewedItems', _app.ext.myRIA.vars.session.recentlyViewedItems);
+				_app.model.writeLocal('recentlyViewedItems', _app.ext.quickstart.vars.session.recentlyViewedItems);
 				_app.model.writeLocal('timeStamp',d);// Add timestamp
 			}
 			
