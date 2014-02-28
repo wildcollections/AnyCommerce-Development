@@ -61,13 +61,13 @@ var store_powerlandonline = function(_app) {
 					var expired = false;
 				}
 				if(temp && !expired){
-					_app.ext.quickstart.vars.session.recentlyViewedItems = temp;
-					_app.u.dump(_app.ext.quickstart.vars.session.recentlyViewedItems);
+					_app.ext.myRIA.vars.session.recentlyViewedItems = temp;
+					_app.u.dump(_app.ext.myRIA.vars.session.recentlyViewedItems);
 					var $container = $('#recentlyViewedItemsContainer');
 					$container.show();
 					$("ul",$container).empty(); //empty product list
 					setTimeout(function(){
-						$container.anycontent({data:_app.ext.quickstart.vars.session}); //build product list
+						$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
 					},50);
 				}
 				_app.templates.homepageTemplate.on('complete.slideshow', function(event,$context, P){
@@ -86,7 +86,7 @@ var store_powerlandonline = function(_app) {
 					var $container = $('#recentlyViewedItemsContainer');
 					$container.show();
 					$("ul",$container).empty(); //empty product list
-					$container.anycontent({data:_app.ext.quickstart.vars.session}); //build product list
+					$container.anycontent({data:_app.ext.myRIA.vars.session}); //build product list
 					});
 				
 				_app.templates.homepageTemplate.on('complete.shareThisButton', function(event,$context, infoObj){
@@ -219,7 +219,7 @@ var store_powerlandonline = function(_app) {
 			cacheRecentlyViewedItems: function ($container){
 				_app.u.dump ('Caching product to recently viewed');
 				var d = new Date().getTime();
-				_app.model.writeLocal('recentlyViewedItems', _app.ext.quickstart.vars.session.recentlyViewedItems);
+				_app.model.writeLocal('recentlyViewedItems', _app.ext.myRIA.vars.session.recentlyViewedItems);
 				_app.model.writeLocal('timeStamp',d);// Add timestamp
 			}
 			

@@ -93,7 +93,6 @@ var partner_addthis = function(_app) {
 			this.callAddThis(call, target, configObj, sharingObj);
 			},
 		button : function($tags, infoObj){
-			
 			var call = 'button';
 			var target = $tags.get();
 			var configObj = _app.ext.partner_addthis.vars.addthis_config;

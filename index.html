@@ -138,9 +138,9 @@ ANIMATION TESTING
 <!-- Header -->
 	<div class='header clearfix'>
 		<div class="logoSection">
-			<div id='logo' onClick="showContent('homepage');" class='pointer'>
+			<a id="logo" href="#!/" class="pointer">
 				<img width="140" height="62" src="images/powerlandlogo.png">
-			</div>
+			</a>
 			<div class="cartSection">
 				<a class="displayNoneLandscape displayNonePortrait displayNoneMobile" onClick="return showContent('cart',{});" class='pointer'>
 					<img src="images/cart.png" class="cartIcon" />
@@ -439,9 +439,9 @@ remember to NOT put the button inside the 'onclick' container or two events will
 -->
 <li id='productListTemplate' class='loadingBG alignCenter ' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
 	<div class="quickViewSection">
-		<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
+		<button class='floatRight pointer quickView displayNone' data-app-click='myRIA|quickviewShow' data-loadstemplate='productTemplateQuickView'>Quickview</button>
 	</div>
-
+	
 	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
 		<div class='prodThumbContainer prodListImage' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
 		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='145' height='145' />
@@ -604,7 +604,7 @@ this will likely become more flexible in the future. ###
 -->
 
 
-<div id='productTemplate' class='productPage templateContent'>
+<div id='productTemplate' class='productPage templateContent' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 <ul class='clearfix noPadOrMargin fluidList breadcrumb' data-bind='var: session(session.recentCategories.0); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
 <div class='prodViewerContainer'>
@@ -1437,7 +1437,7 @@ used on a product layout. Some product have 'children' which may represent the s
 		<li data-bind='var:review(RATING); format:addClass; format:addClass; className:review_;' class='reviewSprite'></li>
 		<li data-bind='var:review(CUSTOMER_NAME); format:text;'></li>
 		<li data-bind='var:review(LOCATION); format:text; pretext:of ;'></li>
-		<li data-bind='var:review(CREATED_GMT); format:unix2mdy; pretext:on ;'></li>
+		<li data-bind='var:review(CREATED_GMT); format:epoch2mdy; pretext:on ;'></li>
 
 	</ul>
 	<blockquote>
