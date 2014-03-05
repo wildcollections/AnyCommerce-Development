@@ -315,6 +315,20 @@ a:hover {color: #eb7125;}
 }
 /********* ProductListTemplate CSS End **********/
 
+/********* ProductTemplateQuickView CSS Start **********/
+.prodContainerQuickView .imageContainer{
+	width:241px;
+}
+.prodContainerQuickView .prodSummaryContainer{
+	width:79%;
+}
+.prodContainerQuickView .productReviewsList {
+    border: 1px solid #939598;
+    margin: 0;
+    padding: 4px 8px;
+}
+/********* ProductTemplateQuickView CSS End **********/
+
 
 /********* ProductTemplate CSS Start **********/
 .productPage{

@@ -843,7 +843,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 <!-- a template used for a quickview link off of a category page -->
 <div id='productTemplateQuickView'>
 
-<table class='prodViewerContainer'>
+<table class='prodViewerContainer prodContainerQuickView'>
 <tr>
 	<td class='imageContainer'>
 <div>
@@ -873,7 +873,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 	<section class='marginBottom'>
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
-		<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
+		<span data-bind='var: reviews(reviews.total); format:text;posttext: Reviews; className:numReviews;'></span>
 	</section>
 
 	<div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
